@@ -1,2 +1,9 @@
-# test-automation-framework
-A framework for building web and other automation test suites using robot framework
+# test-automation
+
+A framework for building web and other automation test suites using robot framework.
+
+Following libraries are implemented:
+
++ Database Library
+
++ Selenium Library

@@ -1,0 +1,210 @@
+++++callStoredProcedure
+
+Calls a stored procedure using recently opened connection.
+
+* Usage Example(s):*
+| Open Connection | db.properties |
+| Call Stored Procedure | demoSp('foo', 'bar') |
+| Call Stored Procedure | report_gen_proc() |
+| Close Connection |
+
+
+++++++++++beginTransaction
+
+Ends any active transaction and begins a new transaction.
+
+*Usage Example(s):*
+
+| Open Connection | db.properties |
+| Begin Transaction |
+
+++++closeAllConnections
+
+Closes all open connections.
+
+*Usage Example(s):*
+| *Close All Connections* |
+
+
+++++closeConnection
+
+Closes the connection with specified `sessionIdOrAlias`.
+If session id or alias not provided, closes the recently opened connection.
+
+*Usage Example(s):*
+
+| *Close Connection* | _session id_ |
+| *Close Connection* | _alias_ |
+| *Close Connection* |
+
+
+++++commitTransaction
+
+Commits a transaction.
+
+*Usage Example(s):*
+
+| Open Connection | db.properties |
+| Begin Transaction |
+| Execute Query | Update users set email='james.bond@jamesbond.com' where id=007 |
+| Commit Transaction |
+| Close Connection |
+
+
+++++executeQuery
+
+Execute a given query
+
+*Usage Example(s):*
+
+| *Open Connection* | localdb.conf |
+| Execute Query | insert into users(id, name) values (100, 'james') |
+| Execute Query | update users set name='bond' where id=100 |
+| Close Connection |
+
+++++getRowCount
+
+Return number of rows given a select statement.
+
+*Usage Example(s):*
+
+| *Open Connection* | localdb.conf |
+| ${count} =  Get Row Count | select * from users |
+| ${count} =  Get Row Count | select count(*) from users |
+| ${count} =  Get Row Count | select * from users where id=100 |
+| Close Connection |
+
+
+++++openConnection
+
+Opens a *readOnly* connection to the database specified by the `url` connection string,`username` and `password`.
+Assigns the optional `alias` to the connection.
+
+*ConfigFile:*
+
+If `configFile` is provided, an attempt will be made to load connection properties from the file.
+Values from the property file will be used even if the explicit properties are provided.
+Test execution will halt, if config file not found or not readable or does not contain all required properties.
+
+*JDBC:*
+
+Uses Java JDBC to open connections, so should work with any JDBC compatible database.
+The corresponding jdbc driver/version for the database should be added to the classpath along with this library
+and also the fully qualified driver class name `driverClass` should be provided explicitly or in config file.
+
+| *Database* | *URL* | *Driver Class* |
+| MySQL | jdbc:mysql://HOST/DATABASE | com.mysql.jdbc.Driver |
+| PostgreSQL | jdbc:postgresql://HOST/DATABASE | org.postgresql.Driver |
+| SQLServer | jdbc:microsoft:sqlserver://HOST:1433;DatabaseName=DATABASE | com.microsoft.jdbc.sqlserver.SQLServerDriver |
+
+*Usage Example(s):*
+
+| *Open Connection* | localdb.conf |
+| *Open Connection* | localdb.conf | connection1 |
+| *Open Connection* | localdb.conf | false |
+| *Open Connection* | localdb.conf | connection1 | false |
+| *Open Connection* | com.mysql.jdbc.Driver | jdbc:mysql://HOST/DATABASE | username | password |
+| *Open Connection* | com.mysql.jdbc.Driver | jdbc:mysql://HOST/DATABASE | username | password | alias |
+| *Open Connection* | com.mysql.jdbc.Driver | jdbc:mysql://HOST/DATABASE | username | password | false | alias |
+| Close Connection |
+
+++++rollbackTransaction
+
+Rollback te transaction.
+
+Can be used in test teardown to undo effect of dml commands.
+
+*Usage Example(s):*
+
+| Open Connection | db.properties |
+| Begin Transaction |
+| Execute Query | Update users set email='james.bond@jamesbond.com' where id=007 |
+| Rollback Transaction |
+| Close Connection |
+
+++++deleteRows
+
+Deletes the rows in a given table and optional where clause.
+
+*Usage Example(s):*
+| *Open Connection* | localdb.conf |
+| Execute Query | create table if not exists temp(temp_id varchar(50)) |
+| Execute Query | insert into temp(temp_id) values ('100') |
+| Execute Query | insert into temp(temp_id) values ('101') |
+| Execute Query | insert into temp(temp_id) values ('102') |
+| Execute Query | insert into temp(temp_id) values ('103') |
+| Delete Rows | temp | temp_id='100' |
+| Delete Rows | temp |
+| Close Connection |
+
+++++tableMustExist
+
+Verifies that the given table exists in the default or given schema.
+
+*Usage Example(s):*
+
+| *Open Connection* | localdb.conf |
+| Table Must Exist | test_table | test_schema |
+| Table Must Exist | test_table |
+| Close Connection |
+
+
+++++tableShouldContainColumn
+
+Verifies that the given column exists in a table with optional specific schema.
+
+*Usage Example(s):*
+| *Open Connection* | localdb.conf |
+| Table Should Contain Column | test_table | test_column |
+| Table Should Contain Column | test_table | test_column | test_schema |
+
+
+++++tableMustBeEmpty
+
+Verifies that the given table is empty.
+
+*Usage Example(s):*
+| *Open Connection* | localdb.conf |
+| Table Must Be Empty | test_table |
+
+
+++++tablesMustContainSameNumberOfRows
+
+Verifies that the number of rows in two table are same.
+
+*Usage Example(s):*
+
+| *Open Connection* | localdb.conf |
+| Tables Must Contain Same Number Of Rows | table1 | table 2 |
+
+
+++++numberOfRowsShouldBe
+
+Verifies that the number of rows in a table equals to given count.
+Where clause is optional, if provided will be used for count query.
+
+*Usage Example(s):*
+| *Open Connection* | localdb.conf |
+| Number of Rows Should Be | test_table | 10 |
+| Number of Rows Should Be | test_table | 10 | id='100' and name like 'jam%' |
+
+
+++++numberOfRowsShouldBeLessThan
+
+Verifies that the number of rows in a table are less than the given count.
+Where clause is optional, if provided will be used for count query.
+
+*Usage Example(s):*
+| *Open Connection* | localdb.conf |
+| Number of Rows Should Be Less Than | test_table | 5 |
+| Number Of Rows Should Be Less Than | test_table | 2 | id='100' |
+
+++++numberOfRowsShouldBeGreaterThan
+
+Verifies that the number of rows in a table are greater than the given count.
+Where clause is optional, if provided will be used for count query.
+
+*Usage Example(s):*
+| *Open Connection* | localdb.conf |
+| Number of Rows Should Be Greater Than | test_table | 5 |
+| Number Of Rows Should Be Greater Than | test_table | 2 | id='100' |

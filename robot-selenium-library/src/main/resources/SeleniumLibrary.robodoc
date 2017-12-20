@@ -1,0 +1,1207 @@
+++++openBrowser
+Opens a browser session and navigate to the given URL.
+
+*Arguments*
+
+- _url_: The URL to navigate to
+- _browserName_: Name of the browser. Valid browser types: IEXPLORER, FIREFOX, CHROME, SAFARI. default is FIREFOX browser
+- _alias_: An alias for this browser session. Optional
+- _capabilities_: the JSON string of capabilities to use for this browser.
+
+*Returns*
+
+A session id associated with this browser session.
+
+*Usage Example(s):*
+
+| Open Browser | http://www.google.com |
+| Open Browser | http://www.google.com | FIREFOX |
+| Open Browser | http://www.google.com | chrome |
+| Open Browser | http://www.google.com | FIREFOX | google |
+| Open Browser | http://www.google.com | firefox | {"capabilities": {"moz:firefoxOptions": {"args": ["-headless"], "prefs": {"dom.ipc.processCount": 8 }, "log": {"level": "trace"} } } } |
+
+
+++++closeBrowser
+
+Closes the browser window.
+
+If a session id or alias is provided uses it to locate the session associated with it and closes it.
+No action will be taken if a session could not found. If not provided, closes the recently opened session.
+
+*Arguments*
+
+- _sessionIdOrAlias_: Session Id or Alias for a given browser session.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com | firefox | google |
+| ${sessionId} = Open Browser | www.yahoo.com | firefox | yahoo |
+| Close Browser |
+| Close Browser | google |
+| Close Browser | ${sessionId} |
+
+++++closeAllBrowsers
+
+Closes all browser sessions
+
+Quits silently, if there are no running sessions.
+
+*Usage Examples*
+
+| Close All Browsers |
+
+++++switchBrowser
+
+Switch to another browser session provided with session id/alias.
+
+*Arguments*
+
+- _sessionIdOrAlias_: Session Id or Alias associated with a session to switch
+
+*Usage Examples:*
+
+| Open Browser | www.google.com | firefox | google |
+| ${sessionId} = Open Browser | www.yahoo.com | firefox | yahoo |
+| Switch Browser | google |
+| Switch Browser | ${sessionId} |
+
+
+++++deleteAllCookies
+
+Delete all cookies in the current browser driver session.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Delete All Cookies |
+
+
+++++deleteCookie
+
+Deletes a cookie with given *name* in the current browser driver session.
+
+*Arguments*
+
+- _name_: Name of the cookie to delete.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Delete Cookie | session_user |
+
+++++getCookies
+
+Retuns all the cookies set on current browser driver session.
+
+Returns in the format cookieName=cookieValue separated by ':'
+
+*Usage Example(s)*:
+
+| Open Browser | www.google.com |
+| ${cookies} = Get Cookies |
+| Log ${cookies} |
+
+
+++++getCookieValue
+
+Returns the value of the cookie with given *name*.
+
+*Arguments*
+- _name_: cookie name.
+
+*Throws*
+Throws failure error if a cookie with the given name is not found.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${val} = Get Cookie Value | session_id |
+
+
+++++addCookie
+
+Adds a cookie to the current browser driver session.
+
+*Arguments*
+
+- _name_: Cookie Name
+- _value_: Cookie Value
+- _path_: Optioal. Cookie paths
+- _domain_: Optional. Cookie domain.
+- _secure_: Optional. Boolean flag indicating whether it is a secure cookie or not.
+- _expiry_: Optional. Cookie expiration date time in format yyyyMMdd HHmmss.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Add Cookie | session_id | 101010102shhzss |
+
+
+++++elementTextShouldBe
+
+Verify the element text identified by *locator* is equal to given *text*.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _text_: the expected text.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Text Should Be | xpath=//*[@id='gs_tti0'] | search |
+| Element Text Should Be | xpath=//*[@id='gs_tti0'] | search | Text of search box not 'search' |
+
+
+++++elementTextShouldNotBe
+
+Verify the element text identified by *locator* is *not* equal to given *text*.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _text_: the expected text.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Text Should Not Be | xpath=//*[@id='gs_tti0'] | search |
+| Element Text Should Not Be | xpath=//*[@id='gs_tti0'] | search | Text of search box not expected to be 'search' |
+
+
+++++elementTextShouldContain
+
+Verify the element text identified by <b>locator</b> contains <b>text</b>.
+This is a _contains_ version of #elementTextShouldBe
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _text_: the expected text.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Text Should Contain | xpath=//*[@id='gs_tti0'] | My Profile |
+| Element Text Should Contain | xpath=//*[@id='gs_tti0'] | My Profile | My profile link not found |
+
+
+++++elementTextShouldNotContain
+
+Verify the element text identified by <b>locator</b> does <u>not</u> contain <b>text</b>.
+
+This is a _contains_ version of #elementTextShouldNotBe
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _text_: the expected text.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Text Should Not Contain | xpath=//*[@id='gs_tti0'] | profile |
+| Element Text Should Not Contain | xpath=//*[@id='gs_tti0'] | search | some message |
+
+
+++++elementShouldBeEnabled
+
+Verify element located by the <b>locator</b> is enabled.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Enabled | id=q |
+
+
+++++elementShouldBeDisabled
+
+Verify element located by the <b>locator</b> is disabled.<br>
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Enabled | id=q |
+
+
+++++elementShouldBeSelected
+
+Verify element located by <b>locator</b> is selected.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Selected | id=q |
+| Element Should Be Selected | id=q | Element is not selected |
+
+
+++++elementShouldNotBeSelected
+
+Verify element located by <b>locator</b> is <u>not</u> selected.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Not Be Selected | id=q |
+| Element Should Not Be Selected | id=q | Element is found selected |
+
+
+++++elementShouldBeVisible
+
+Verify element located by <b>locator</b> is visible.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Visible | id=q |
+| Element Should Be Visible | id=q | searchbox is found not visible |
+
+
+++++elementShouldNotBeVisible
+
+Verify element located by <b>locator</b> is hidden.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Not Be Visible | id=q |
+| Element Should Not Be Visible | id=q | searchbox is found to be visible |
+
+
+++++elementShouldBeClickable
+
+Verify element located by <b>locator</b> is clickable.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Clickable | xpath=//*[@id="fkbx-spch"] |
+| Element Should Be Clickable | xpath=//*[@id="fkbx-spch"] | searchbox is is not clickable |
+
+
+++++elementShouldNotBeClickable
+
+Verify element located by <b>locator</b> is <u>not</u> clickable.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Not Be Clickable | xpath=//*[@id="fkbx-spch"] |
+| Element Should Not Be Clickable | xpath=//*[@id="fkbx-spch"] | searchbox is is found clickable |
+
+
+++++getElementText
+
+Return the element text located by <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${text} = Get Element Text | id=q |
+| Log | ${text} |
+
+++++clearElementText
+
+Clears the element text located by <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Clear Element Text | id=q |
+
+
+++++getHorizontalPosition
+
+Returns the horizontal position of the element located by <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${xPos} = | Get Horizontal Position | id=q |
+| Log | ${xPos} |
+
+++++getVerticalPosition
+
+Returns the vertical position of the element located by <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${yPos} = | Get Vertical Position | id=q |
+| Log | ${yPos} |
+
+++++clickElement
+
+Click an element located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Click Element | id=q |
+
+
+++++clickElementAtCoordinates
+
+Click an element located by <b>locator</b> at <b>xOffset</b> and <b>yOffset</b> location.
+
+Useful for image map links.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _xOffset_: horizontal offset.
+- _yOffset_: vertical offset.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Click Element At Coordinates | id=imgmap | 10 | 20 |
+
+
+++++doubleClickElement
+
+Double-Click an element located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Double Click Element | id=q |
+
+++++focus
+
+Focus an element located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Focus | id=q |
+
+++++dragAndDrop
+
+Perform Drag-drop from source element located by <b>source</b> to target element located by <b>target</b>.
+
+*Arguments*
+- _source_: the source element locator string. Refer to locators section for more details.
+- _target_: the source element locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Drag And Drop | xpath=//h3[1] | name=receiver |
+
+
+++++dragAndDropByOffset
+
+Perform Drag-drop from source element located by <b>source</b> to target element located by <b>xOffset</b> and <b>yOffset</b>.
+
+*Arguments*
+- _source_: the source element locator string. Refer to locators section for more details.
+- _xOffset_:
+- _yOffset_:
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Drag And Drop By Offset | xpath=//h3[1] | 300 | 400 |
+
+++++mouseDown
+
+Mouse-down on an element located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Down | xpath=//h3[1] |
+
+++++mouseUp
+
+Mouse-up from an element located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Up | xpath=//h3[1] |
+
+++++mouseOver
+
+Mouse-over on an element located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Over | xpath=//h3[1] |
+
+++++mouseOut
+
+Mouse-out from an element located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Out | xpath=//h3[1] |
+
+
+++++openContextMenu
+
+Open Context menu on the element located by the  <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Open Context Menu | xpath=//h3[1] |
+
+++++clickLink
+
+Click a link located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Click Link | xpath=//h3[1] |
+
+++++mouseDownOnLink
+
+Mouse-down on a link located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Down On Link | xpath=//h3[1] |
+
+++++clickImage
+
+Click an image located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Click Image | xpath=//h3[1] |
+
+++++sendKeys
+Send input or keys <b>key</b> to the element located by the <b>locator</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- key: the text to type.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Send Keys | id=emailaddress | james.bond@jamesb.com |
+
+++++simulateEvent
+
+Simulate a javascript/dom <b>event</b> like 'click', 'mouseOver' etc. on an element located by the <b>locator</b>
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- event: the event to simulate.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Simulate Event | id=emailaddress | click |
+
+++++submitForm
+
+Submits the form identified by the <b>locator</b>.
+
+If the locator is empty, the first form in the page will be submitted.
+
+*Arguments*
+- _locator_: Optional. the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Submit Form |
+| Submit Form | xpath=//form[@id=form1] |
+
+++++selectCheckbox
+
+Selects the checkbox identified by the <b>locator</b>. If the checkbox is already checked, does nothing.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Select Checkbox | id=subscribe |
+
+++++unSelectCheckbox
+
+UnSelects the checkbox identified by the <b>locator</b>. If the checkbox is not checked, selects the checkbox.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| UnSelect Checkbox | id=subscribe |
+
+
+++++chooseFile
+
+Types the given <b>filePath</b> into the input field identified by <b>locator</b>
+
+This keyword is most often used to input files into upload forms.
+The file specified with filePath must be available on the same host where the Selenium Server is running.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _filePath_: full file path
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Choose File | id=file | ~/files/file.txt |
+
+++++inputPassword
+
+Types the given password into password field identified by the <b>locator</b>.
+
+Clears the old value in the password field before typing
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _password_: password to type
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Input Password | id=passwd | pass1234 |
+
+++++inputText
+
+Types the given text into the text field identified by the <b>locator</b>
+
+Clears the old value in the text field before typing.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- text: text to type
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Input Text | name=username | user101 |
+
+
+++++textFieldValueShouldBe
+
+Verify the value of the text field identified by the <b>locator</b> is equal to <b>value</b>
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Field Value Should Be | name=username | user101 |
+| Text Field Value Should Be | name=username | user101 | value of the username field is not user101 |
+
+
+++++textFieldValueShouldNotBe
+
+Verify the value of the text field identified by the <b>locator</b> is equal to <b>value</b>
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Field Value Should Not Be | name=username | user101 |
+| Text Field Value Should Not Be | name=username | user101 | value of the username field is user101 |
+
+
+++++textFieldValueShouldContain
+
+Verify the value of the text field identified by the <b>locator</b> contains <b>value</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Field Value Should Contain | name=username | user101 |
+| Text Field Value Should Contain | name=username | user101 | username field value does not contain user101 |
+
+++++textFieldValueShouldNotContain
+
+Verify the value of the text field identified by the <b>locator</b> does not contain <b>value</b>.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Field Value Should Not Contain | name=username | 101 |
+| Text Field Value Should Not Contain | name=username | 101 | username field value does not contain user101 |
+
+
+++++goTo
+Navigate the browser to the specified <b>url</b>.
+
+*Arguments*
+
+- _url_: the URL navigate to.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Go To | www.amazon.com |
+
+
+++++goBack
+Navigate back in the current browser window.
+
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Go To | www.amazon.com |
+| Go Back |
+
+++++goForward
+Navigate forward in the current browser window.
+
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Go To | www.amazon.com |
+| Go Back |
+| Go Forward |
+
+++++refresh
+
+Refresh current browser window.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Refresh |
+
+
+++++getSource
+
+Returns the current page source.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${pageSource} = | Get Source |
+| Log | ${pageSource} |
+
+
+++++getTitle
+
+Returns the current page title.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${pageTitle} = | Get Title |
+| Log | ${pageTitle} |
+
+
+++++reloadPage
+Reload current page.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Reload Page |
+
+
+++++titleShouldContain
+
+Verify the page title to contain the <b>title</b>.
+
+*Arguments:*
+- _title_: Expected title
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Title Should Contain | Search |
+
+
+++++titleShouldNotContain
+
+Verify the page title to not contain the <b>title</b>.
+
+*Arguments:*
+- _title_: Expected title
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Title Should Not Contain | results |
+
+
+++++titleShouldBe
+
+Verify the current page title should be equal to <b>title</b>.
+
+*Arguments:*
+- _title_: Expected title
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Title Should Be | Google |
+
+++++titleShouldNotBe
+
+Verify the current page title is not equal to <b>title</b>.
+
+*Arguments:*
+- _title_: Expected title
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Title Should Not Be | Search Results |
+
+
+++++pageShouldContainText
+
+Verify the current page contains the given <b>text</b>.
+
+*Arguments:*
+- _text_: expected text
+
+*Usage Example(s):
+
+| Open Browser | www.google.com |
+| Page Should Contain Text | Im' Feeling Lucky |
+
+++++pageShouldNotContainText
+
+Verify the current page does not contain the given <b>text</b>.
+
+*Arguments:*
+- _text_: expected text
+
+*Usage Example(s):
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Text | Welcome |
+
+
+++++pageShouldContainElement
+
+Verify the current page contains the given element with optional <b>tag</b> and located by the <b>locator</b>.
+
+Also supports checking the element to be located is of specific tag. Which is useful in locating custom element tags.
+
+*Arguments:*
+- _locator_: the locator string.
+- _tag_: Optional, Ensures the element to be located is of type specific tag.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Element | id=username | input |
+| Page Should Contain Element | id=username |
+| Page Should Contain Element | id=username | customtag | expcted element could not be found |
+
+++++pageShouldNotContainElement
+
+Verify the current page does not contain the given element with optional <b>tag</b> and located by the <b>locator</b>.
+
+Also supports checking the element to be located is of specific tag. Which is useful in locating custom element tags.
+
+*Arguments:*
+- _locator_: the locator string.
+- _tag_: Optional, Ensures the element to be located is of type specific tag.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Element | id=username | input |
+| Page Should Not Contain Element | id=username |
+| Page Should Not Contain Element | id=username | customtag | username element is not expected, but found |
+
+++++pageShouldContainLink
+
+Verify the current page contains the given link element located by the <b>locator</b>.
+
+The locator must be able to locate a link element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Link | id=search |
+| Page Should Contain Link | id=search | page does not contain the search link |
+
+++++pageShouldNotContainLink
+
+Verify the current page not contains the given link element located by the <b>locator</b>.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Link | id=search |
+| Page Should Not Contain Link | id=search | page contains the search link |
+
+
+++++pageShouldContainImage
+
+Verify the current page contains the image element located by the <b>locator</b>.
+
+The locator must be able to locate an image element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Image | name=logo |
+| Page Should Contain Image | id=logo | page does not contain the logo image |
+
+
+++++pageShouldNotContainImage
+
+Verify the current page does not contain the image element located by the <b>locator</b>.
+
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Image | name=logo |
+| Page Should Not Contain Image | id=logo | page not expcted to contain the logo image |
+
+
+
+++++pageShouldContainCheckbox
+
+Verify the current page contains the checkbox element located by the <b>locator</b>.
+
+The locator must be able to locate an checkbox element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Checkbox | name=feelinglucky |
+| Page Should Contain Checkbox | name=feelinglucky | page does not contain the feelinglucky checkbox |
+
+
+++++pageShouldNotContainCheckbox
+
+Verify the current page does not contain the checkbox element located by the <b>locator</b>.
+
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Checkbox | name=logo |
+| Page Should Not Contain Checkbox | id=logo | page not expcted to contain the logo checkbox |
+
+
+
+++++pageShouldContainRadioButton
+
+Verify the current page contains the radio button element located by the <b>locator</b>.
+
+The locator must be able to locate an radio button element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Radio Button | name=feelinglucky |
+| Page Should Contain Radio Button | name=feelinglucky | page does not contain the feelinglucky radio |
+
+
+++++pageShouldNotContainRadioButton
+
+Verify the current page does not contain the radio button element located by the <b>locator</b>.
+
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Radio Button | name=logo |
+| Page Should Not Contain Radio Button | id=logo | page not expcted to contain the logo radio |
+
+
+++++pageShouldContainTextfield
+
+Verify the current page contains the text element located by the <b>locator</b>.
+
+The locator must be able to locate an input text element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Textfield | name=q |
+| Page Should Contain Textfield | name=q | page does not contain the search text input|
+
+
+++++pageShouldNotContainTextfield
+
+Verify the current page not contains the text element located by the <b>locator</b>.
+
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Textfield | name=q |
+| Page Should Not Contain Textfield | name=q | page contains the search text input |
+
+
+++++captureScreenshot
+Take a screenshot of the current page and embed into the log.
+
+*Arguments:*
+
+- _fileName_: Optional, name of the screenshot file. Generates a standard name.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Capture Screenshot |
+| Capture Screenshot | capure101.png |
+
+
+++++closeWindow
+Close the current window.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Close Window |
+
+++++maximizeWindow
+Maximize the current window.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Maximize Window |
+
+++++getWindowSize
+
+Get current window size.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${windowSize} = | Get Window Size |
+
+
+++++setWindowSize
+
+Set the <b>width</b> and <b>height</b> to the current widnow.
+
+*Arguments:*
+
+- _width_: width to set.
+- _height_:  height to set.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Set Window Size | 300 | 400 |
+
+
+++++getLocation
+
+Return current window location.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${windowLocation} = | Get Window Location |
+
+
+++++locationShouldBe
+
+Verify the current window location is equals to <b>url</b>.
+
+- _url_: the expected url.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Location Should Be | https://www.google.com/ |
+
+
+++++locationShouldContain
+
+Verify the current window location contains <b>url</b>.
+
+- _url_: the expected url.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Location Should Contain | https |
+
+
+++++alertShouldBePresent
+
+Verify an alert is present and dismiss it.
+
+If <b>text</b> is a non-empty string, then it is also verified that the message of the alert equals to text.
+
+*Arguments:*
+- _text_: Text on the alter window.
+
+*Usage Example(s):*
+
+| Alert Should Be Present |
+| Alter Should Be Present | Are you ok to update? |
+
+
+++++confirmAction
+
+Dismisses currently shown confirmation dialog and returns its message.
+
+*Arguments:*
+
+- _action_: the action to choose ('OK' or 'Cancel')
+
+*Usage Example(s):*
+
+| Confirm Action | OK |
+| Confirm Action | Cancel |
+
+
+
+
+
+
+
+
+
+
+

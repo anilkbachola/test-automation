@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec format="ROBOT" type="resource" generated="20171220 11:29:05" name="SeleniumLibrary (Behavior-Driven Extension Keywords)">
+<version>1.0-SNAPSHOT</version>
+<scope></scope>
+<namedargs>yes</namedargs>
+<doc>Behavior-driven keywords, extended from core keywords</doc>
+<kw name="I open chrome browser and navigate to">
+<arguments>
+<arg>url</arg>
+</arguments>
+<doc>Opens chrome browser session and navigate to the given URL</doc>
+<tags>
+</tags>
+</kw>
+<kw name="I open Firefox browser and navigate to">
+<arguments>
+<arg>url</arg>
+</arguments>
+<doc>Opens firefox browser session and navigate to the given URL</doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

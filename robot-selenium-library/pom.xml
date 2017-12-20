@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>test-automation</artifactId>
+        <groupId>com.rise.autotest</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>robot-selenium-library</artifactId>
+    <properties>
+        <library.name>SeleniumLibrary</library.name>
+        <selenium-java.version>3.7.1</selenium-java.version>
+        <selenium-support.version>3.7.1</selenium-support.version>
+        <json-simple.version>1.1.1</json-simple.version>
+    </properties>
+    <dependencies>
+
+        <dependency>
+            <groupId>com.rise.autotest</groupId>
+            <artifactId>robot-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>${selenium-support.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>${json-simple.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${encoding}</encoding>
+                    <optimize>true</optimize>
+                    <debug>true</debug>
+                    <compilerId>javac</compilerId>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.robotframework</groupId>
+                <artifactId>robotframework-maven-plugin</artifactId>
+                <version>1.4.7</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.robotframework</groupId>
+                        <artifactId>robotframework</artifactId>
+                        <version>${robotframework.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>html</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>libdoc</goal>
+                        </goals>
+                        <configuration>
+                            <libdoc>
+                                <outputDirectory>${project.parent.basedir}/docs</outputDirectory>
+                                <outputFile>${library.name}-core.html</outputFile>
+                                <libraryOrResourceFile>${library.name}</libraryOrResourceFile>
+                                <version>${project.version}</version>
+                            </libdoc>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>xml</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>libdoc</goal>
+                        </goals>
+                        <configuration>
+                            <libdoc>
+                                <outputDirectory>${project.parent.basedir}/docs</outputDirectory>
+                                <outputFile>${library.name}-core.xml</outputFile>
+                                <libraryOrResourceFile>${library.name}</libraryOrResourceFile>
+                                <version>${project.version}</version>
+                            </libdoc>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>htmlext</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>libdoc</goal>
+                        </goals>
+                        <configuration>
+                            <libdoc>
+                                <outputDirectory>${project.parent.basedir}/docs</outputDirectory>
+                                <outputFile>${library.name}-bdd.html</outputFile>
+                                <libraryOrResourceFile>SeleniumLibrary_BDD_Keywords.robot</libraryOrResourceFile>
+                                <extraPathDirectories>src/main/resources/libraries</extraPathDirectories>
+                                <name>SeleniumLibrary (Behavior-Driven Extension Keywords)</name>
+                                <version>${project.version}</version>
+                            </libdoc>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>xmlext</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>libdoc</goal>
+                        </goals>
+                        <configuration>
+                            <libdoc>
+                                <outputDirectory>${project.parent.basedir}/docs</outputDirectory>
+                                <outputFile>${library.name}-bdd.xml</outputFile>
+                                <libraryOrResourceFile>SeleniumLibrary_BDD_Keywords.robot</libraryOrResourceFile>
+                                <extraPathDirectories>src/main/resources/libraries</extraPathDirectories>
+                                <name>SeleniumLibrary (Behavior-Driven Extension Keywords)</name>
+                                <version>${project.version}</version>
+                            </libdoc>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
