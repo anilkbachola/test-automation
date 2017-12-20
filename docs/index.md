@@ -25,8 +25,6 @@
    + [JavaDoc](DatabaseLibrary/javadoc/index.html)
    
 
-{% include_relative ../robot-db-library/README.MD %}
-
 ### Selenium Library
 
    + [Documentation](../robot-selenium-library/README.MD)
@@ -34,4 +32,3 @@
    + [BDD Style Keywords Documentation](SeleniumLibrary/keywords/SeleniumLibrary-bdd.html)
    + [JavaDoc](SeleniumLibrary/javadoc/index.html)   
    
-{% include_relative ../robot-selenium-library/README.MD %}
