@@ -20,14 +20,14 @@
 + Database Library
 
    + [Documentation](../robot-db-library/README.MD)
-   + [Core Keywords Documentation](DatabaseLibrary/DatabaseLibrary-core.html)
-   + [BDD Style Keywords Documentation](DatabaseLibrary/DatabaseLibrary-bdd.html)
+   + [Core Keywords Documentation](DatabaseLibrary/keywords/DatabaseLibrary-core.html)
+   + [BDD Style Keywords Documentation](DatabaseLibrary/keywords/DatabaseLibrary-bdd.html)
    + [JavaDoc](DatabaseLibrary/javadoc/index.html)
    
 + Selenium Library
 
    + [Documentation](../robot-selenium-library/README.MD)
-   + [Core Keywords Documentation](SeleniumLibrary/SeleniumLibrary-core.html)
-   + [BDD Style Keywords Documentation](SeleniumLibrary/SeleniumLibrary-bdd.html)
+   + [Core Keywords Documentation](SeleniumLibrary/keywords/SeleniumLibrary-core.html)
+   + [BDD Style Keywords Documentation](SeleniumLibrary/keywords/SeleniumLibrary-bdd.html)
    + [JavaDoc](SeleniumLibrary/javadoc/index.html)   
    
