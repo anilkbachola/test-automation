@@ -19,6 +19,8 @@ public class BrowserKeywords extends SeleniumBase {
 
     /**
      * Opens the 'firefox' browser by default and navigates to the given <b>url</b>.<br>
+     * And registers the browser with {@link WebDriverManager}
+     *
      * @param url   URL to navigate
      * @return  session id of the browser/driver instance.
      */
@@ -29,6 +31,7 @@ public class BrowserKeywords extends SeleniumBase {
 
     /**
      * Opens the browser specified by <b>browserName</b> and navigates to the given <b>url</b>.<br>
+     * And registers the browser with {@link WebDriverManager}
      *
      * @param url   URL to navigate
      * @param browserName   name of the browser. See {@link BrowserType}
@@ -51,6 +54,7 @@ public class BrowserKeywords extends SeleniumBase {
      * @param url   URL to navigate
      * @param browserName   name of the browser. {@link BrowserType}
      * @param alias An alias for the browser session
+     * @param capabilitiesJson Web Driver capabilities as json string
      * @return  session id of the browser/driver instance.
      */
     @RobotKeyword
@@ -74,7 +78,7 @@ public class BrowserKeywords extends SeleniumBase {
 
 
     /**
-     * Close a web driver/browser session associated with the given <b>sessionIdorAlias</b><br>.
+     * Close a web driver/browser session associated with the given <b>sessionIdorAlias</b>.<br>
      *
      * If the provided session id or alias could not found, returns silently.
      *

@@ -85,6 +85,7 @@ public class ConnectionManager {
 
     /**
      * Close the current connection.
+     * @throws SQLException failure to close the connection.
      */
     public void close() throws SQLException {
         if(!sessionIdStack.isEmpty()) {
@@ -112,6 +113,7 @@ public class ConnectionManager {
 
     /**
      * Close all web driver instances
+     * @throws SQLException sql exception
      */
     public void closeAll() throws SQLException {
         Iterator<Map.Entry<UUID, ConnectionTuple>> iterator = sessionIdConnectionMap.entrySet().iterator();
@@ -146,6 +148,7 @@ public class ConnectionManager {
 
     /**
      * cleanup the connection manager state
+     * @throws SQLException sql exception
      */
     public void cleanup() throws SQLException {
         closeAll();

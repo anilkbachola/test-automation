@@ -52,7 +52,7 @@ public class TransactionKeywords {
     /**
      * Sets the desired transaction isolation level.<br>
      *
-     * <table>
+     * <table summary="">
      * <tr>
      * <td>Isolation Level</td><td>Transactions</td><td>Dirty Reads</td><td>Non-repetable Reads</td><td>Phantom Reads</td>
      * <td>TRANSACTION_NONE</td><td>Not supported</td><td>N/A</td><td>N/A</td><td>N/A</td>
@@ -63,6 +63,7 @@ public class TransactionKeywords {
      * </tr>
      * </table>
      *
+     * @param isolationLevel  Transaction isolation level
      */
     @RobotKeyword
     @ArgumentNames({"isolationLevel"})

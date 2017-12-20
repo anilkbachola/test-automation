@@ -76,12 +76,12 @@ public class ConnectionKeywords {
      *
      * <br>
      * JDBC Driver Examples(not a full list):
-     * <table>
+     * <table summary="">
      *     <tr><td>Database</td><td>URL</td><td>Driver Class</td></tr>
      *     <tr><td>MySQL</td><td>jdbc:mysql://HOST/DATABASE</td><td>com.mysql.jdbc.Driver</td></tr>
-     *     <tr><td>PostgreSQL</td><td></td>jdbc:postgresql://HOST/DATABASE</td><td>org.postgresql.Driver</td></tr>
-     *     <tr><td>SQLServer</td><td></td>jdbc:microsoft:sqlserver://HOST:1433;DatabaseName=DATABASE</td><td>com.microsoft.jdbc.sqlserver.SQLServerDriver</td></tr>
-     *     <tr><td>DB2</td><td></td>jdbc:as400://HOST/DATABASE;</td><td>com.ibm.as400.access.AS400JDBCDriver</td></tr>
+     *     <tr><td>PostgreSQL</td><td>jdbc:postgresql://HOST/DATABASE</td><td>org.postgresql.Driver</td></tr>
+     *     <tr><td>SQLServer</td><td>jdbc:microsoft:sqlserver://HOST:1433;DatabaseName=DATABASE</td><td>com.microsoft.jdbc.sqlserver.SQLServerDriver</td></tr>
+     *     <tr><td>DB2</td><td>jdbc:as400://HOST/DATABASE;</td><td>com.ibm.as400.access.AS400JDBCDriver</td></tr>
      * </table>
      *
      * @param configFile the config file with connection properties.
@@ -130,6 +130,7 @@ public class ConnectionKeywords {
 
     /**
      * Close the recently opened connection
+     * @throws SQLException sql exception
      */
     @RobotKeywordOverload
     public void closeConnection() throws SQLException{
@@ -141,6 +142,7 @@ public class ConnectionKeywords {
      * Closes the connection only if it is found and not already closed.
      *
      * @param sessionIdOrAlias  the session id or aliad of previously opened connection.
+     * @throws SQLException sql exception
      */
     @RobotKeyword
     @ArgumentNames({"sessionIdOrAlias=NONE"})
@@ -155,6 +157,7 @@ public class ConnectionKeywords {
 
     /**
      * Close all opened connections.
+     * @throws SQLException sql exception
      */
     @RobotKeyword
     public void closeAllConnections() throws SQLException {

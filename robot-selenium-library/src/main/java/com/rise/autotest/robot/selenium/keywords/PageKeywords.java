@@ -71,7 +71,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page title should be equal to <b>title</b>. <br/>
+     * Verify the current page title should be equal to <b>title</b>. <br>
      *
      * @param title expected title.
      */
@@ -86,7 +86,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page title is not equal to <b>title</b>. <br/>
+     * Verify the current page title is not equal to <b>title</b>. <br>
      * @param title expected title.
      */
     @RobotKeyword
@@ -100,7 +100,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page contains the given <b>text</b>. <br/>
+     * Verify the current page contains the given <b>text</b>. <br>
      *
      * @param text the text to verify.
      */
@@ -113,7 +113,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page does not contain the given <b>text</b>. <br/>
+     * Verify the current page does not contain the given <b>text</b>. <br>
      *
      * @param text the text to verify.
      */
@@ -132,7 +132,7 @@ public class PageKeywords extends SeleniumBase {
 
     /**
      * Verify the current page contains the given element with optional <b>tag</b> and located by the <b>locator</b>.
-     * <br/>
+     * <br>
      *
      * @param locator   the locator string.
      * @param tag   Optional tag name.
@@ -159,7 +159,7 @@ public class PageKeywords extends SeleniumBase {
 
     /**
      * Verify the current page does not contain the given element with optional <b>tag</b> and located by the <b>locator</b>.
-     * <br/>
+     * <br>
      *
      * @param locator   the locator string.
      * @param tag   Optional tag name.
@@ -185,7 +185,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page contains the given link element located by the <b>locator</b>. <br/>
+     * Verify the current page contains the given link element located by the <b>locator</b>. <br>
      *
      * The locator must be able to locate link element.
      *
@@ -210,7 +210,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page does not contain the link element located by the <b>locator</b>. <br/>
+     * Verify the current page does not contain the link element located by the <b>locator</b>. <br>
      *
      * The locator must be able to locate an link element.
      *
@@ -235,7 +235,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page contains the image element located by the <b>locator</b>. <br/>
+     * Verify the current page contains the image element located by the <b>locator</b>. <br>
      *
      * The locator must be able to locate an image element.
      *
@@ -261,7 +261,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page does not contain the image element located by the <b>locator</b>. <br/>
+     * Verify the current page does not contain the image element located by the <b>locator</b>. <br>
      *
      * The locator must be able to locate an image element.
      *
@@ -287,7 +287,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page contains the checkbox element located by the <b>locator</b>. <br/>
+     * Verify the current page contains the checkbox element located by the <b>locator</b>. <br>
      *
      * The locator must be able to locate an checkbox element.
      *
@@ -313,7 +313,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page not contains the checkbox element located by the <b>locator</b>. <br/>
+     * Verify the current page not contains the checkbox element located by the <b>locator</b>. <br>
      *
      * @param locator   the locator string.
      * @param message   Optional message to throw on failures, instead of default one.
@@ -337,7 +337,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page contains the radio button element located by the <b>locator</b>. <br/>
+     * Verify the current page contains the radio button element located by the <b>locator</b>. <br>
      *
      * The locator must be able to locate an radio button element.
      *
@@ -363,7 +363,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page not contains the radio button element located by the <b>locator</b>. <br/>
+     * Verify the current page not contains the radio button element located by the <b>locator</b>. <br>
      *
      * @param locator   the locator string.
      * @param message   Optional message to throw on failures, instead of default one.
@@ -387,7 +387,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page contains the text element located by the <b>locator</b>. <br/>
+     * Verify the current page contains the text element located by the <b>locator</b>. <br>
      *
      * @param locator   the locator string.
      * @param message   Optional message to throw on failures, instead of default one.
@@ -411,7 +411,7 @@ public class PageKeywords extends SeleniumBase {
     }
 
     /**
-     * Verify the current page not contains the text element located by the <b>locator</b>. <br/>
+     * Verify the current page not contains the text element located by the <b>locator</b>. <br>
      *
      * @param locator   the locator string.
      * @param message   Optional message to throw on failures, instead of default one.
