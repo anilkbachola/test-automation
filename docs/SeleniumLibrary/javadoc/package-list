@@ -1,0 +1,5 @@
+
+com.rise.autotest.robot.selenium
+com.rise.autotest.robot.selenium.keywords
+com.rise.autotest.robot.selenium.locator
+com.rise.autotest.robot.selenium.util

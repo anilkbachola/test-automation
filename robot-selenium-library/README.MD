@@ -91,9 +91,9 @@ Robot Framework: 3.0.2
 
 ## Keyword Documentation
 
-   Click for [Core Keywords](../docs/SeleniumLibrary-core.html) documentation.
+   Click for [Core Keywords](../docs/SeleniumLibrary/keywords/SeleniumLibrary-core.html) documentation.
    
-   Click for [BDD Keywords](../docs/SeleniumLibrary-bdd.html) documentation.
+   Click for [BDD Keywords](../docs/SeleniumLibrary/keywords/SeleniumLibrary-bdd.html) documentation.
 
 ## About Web Driver
 

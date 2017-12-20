@@ -82,7 +82,7 @@
                         </goals>
                         <configuration>
                             <libdoc>
-                                <outputDirectory>${project.parent.basedir}/docs</outputDirectory>
+                                <outputDirectory>${project.parent.basedir}/docs/${library.name}/keywords</outputDirectory>
                                 <outputFile>${library.name}-core.html</outputFile>
                                 <libraryOrResourceFile>${library.name}</libraryOrResourceFile>
                                 <version>${project.version}</version>
@@ -97,7 +97,7 @@
                         </goals>
                         <configuration>
                             <libdoc>
-                                <outputDirectory>${project.parent.basedir}/docs</outputDirectory>
+                                <outputDirectory>${project.parent.basedir}/docs/${library.name}/keywords</outputDirectory>
                                 <outputFile>${library.name}-core.xml</outputFile>
                                 <libraryOrResourceFile>${library.name}</libraryOrResourceFile>
                                 <version>${project.version}</version>
@@ -112,7 +112,7 @@
                         </goals>
                         <configuration>
                             <libdoc>
-                                <outputDirectory>${project.parent.basedir}/docs</outputDirectory>
+                                <outputDirectory>${project.parent.basedir}/docs/${library.name}/keywords</outputDirectory>
                                 <outputFile>${library.name}-bdd.html</outputFile>
                                 <libraryOrResourceFile>SeleniumLibrary_BDD_Keywords.robot</libraryOrResourceFile>
                                 <extraPathDirectories>src/main/resources/libraries</extraPathDirectories>
@@ -129,7 +129,7 @@
                         </goals>
                         <configuration>
                             <libdoc>
-                                <outputDirectory>${project.parent.basedir}/docs</outputDirectory>
+                                <outputDirectory>${project.parent.basedir}/docs/${library.name}/keywords</outputDirectory>
                                 <outputFile>${library.name}-bdd.xml</outputFile>
                                 <libraryOrResourceFile>SeleniumLibrary_BDD_Keywords.robot</libraryOrResourceFile>
                                 <extraPathDirectories>src/main/resources/libraries</extraPathDirectories>
@@ -147,6 +147,8 @@
                 <version>3.0.0</version>
                 <configuration>
                     <show>public</show>
+                    <reportOutputDirectory>${project.parent.basedir}/docs/${library.name}</reportOutputDirectory>
+                    <destDir>javadoc</destDir>
                 </configuration>
             </plugin>
         </plugins>

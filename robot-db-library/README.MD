@@ -84,6 +84,6 @@
 
 ## Keyword Documentation
 
-   Click for [Core Keywords](../docs/DatabaseLibrary-core.html) documentation.
+   Click for [Core Keywords](../docs/DatabaseLibrary/keywords/DatabaseLibrary-core.html) documentation.
       
-   Click for [BDD Keywords](../docs/DatabaseLibrary-bdd.html) documentation.
+   Click for [BDD Keywords](../docs/DatabaseLibrary/keywords/DatabaseLibrary-bdd.html) documentation.

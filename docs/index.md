@@ -5,7 +5,7 @@
 
    This project is implemented to provide a robust framework for implementing automated test suites.
    
-   The goals is to write to automated test suites without having to write any code and any non-technical user should be able write tests in plain english.
+   The goal is to write to automated test suites without having to write any code and any non-technical user should be able write tests in plain english.
    
 ## Robot Framework
 
@@ -19,12 +19,15 @@
 
 + Database Library
 
-   [Core Keywords](DatabaseLibrary-core.html)
-   [BDD Style Keywords](DatabaseLibrary-bdd.html)
+   + [Documentation](../robot-db-library/README.MD)
+   + [Core Keywords Documentation](DatabaseLibrary/DatabaseLibrary-core.html)
+   + [BDD Style Keywords Documentation](DatabaseLibrary/DatabaseLibrary-bdd.html)
+   + [JavaDoc](DatabaseLibrary/javadoc/index.html)
    
 + Selenium Library
 
-   [Core Keywords](SeleniumLibrary-core.html)
-   [BDD Style Keywords](SeleniumLibrary-bdd.html)
-   
+   + [Documentation](../robot-selenium-library/README.MD)
+   + [Core Keywords Documentation](SeleniumLibrary/SeleniumLibrary-core.html)
+   + [BDD Style Keywords Documentation](SeleniumLibrary/SeleniumLibrary-bdd.html)
+   + [JavaDoc](SeleniumLibrary/javadoc/index.html)   
    

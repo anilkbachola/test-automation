@@ -1,0 +1,1679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec format="ROBOT" type="library" generated="20171220 13:51:39" name="SeleniumLibrary">
+<version>1.0-SNAPSHOT</version>
+<scope>global</scope>
+<namedargs>yes</namedargs>
+<doc>The most base type</doc>
+<kw name="Add Cookie">
+<arguments>
+<arg>name</arg>
+<arg>value</arg>
+<arg>path=NONE</arg>
+<arg>domain=NONE</arg>
+<arg>secure=NONE</arg>
+<arg>expiry=NONE</arg>
+</arguments>
+<doc>
+Adds a cookie to the current browser driver session.
+
+*Arguments*
+
+- _name_: Cookie Name
+- _value_: Cookie Value
+- _path_: Optioal. Cookie paths
+- _domain_: Optional. Cookie domain.
+- _secure_: Optional. Boolean flag indicating whether it is a secure cookie or not.
+- _expiry_: Optional. Cookie expiration date time in format yyyyMMdd HHmmss.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Add Cookie | session_id | 101010102shhzss |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Alert Should Be Present">
+<arguments>
+<arg>text=NONE</arg>
+</arguments>
+<doc>
+Verify an alert is present and dismiss it.
+
+If &lt;b&gt;text&lt;/b&gt; is a non-empty string, then it is also verified that the message of the alert equals to text.
+
+*Arguments:*
+- _text_: Text on the alter window.
+
+*Usage Example(s):*
+
+| Alert Should Be Present |
+| Alter Should Be Present | Are you ok to update? |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Assign Id To Element">
+<arguments>
+<arg>locator</arg>
+<arg>id</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Capture Screenshot">
+<arguments>
+<arg>fileName=NONE</arg>
+</arguments>
+<doc>Take a screenshot of the current page and embed into the log.
+
+*Arguments:*
+
+- _fileName_: Optional, name of the screenshot file. Generates a standard name.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Capture Screenshot |
+| Capture Screenshot | capure101.png |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Choose File">
+<arguments>
+<arg>locator</arg>
+<arg>filePath</arg>
+</arguments>
+<doc>
+Types the given &lt;b&gt;filePath&lt;/b&gt; into the input field identified by &lt;b&gt;locator&lt;/b&gt;
+
+This keyword is most often used to input files into upload forms.
+The file specified with filePath must be available on the same host where the Selenium Server is running.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _filePath_: full file path
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Choose File | id=file | ~/files/file.txt |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Clear Element Text">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Clears the element text located by &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Clear Element Text | id=q |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Click Element">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Click an element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Click Element | id=q |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Click Element At Coordinates">
+<arguments>
+<arg>locator</arg>
+<arg>xOffset</arg>
+<arg>yOffset</arg>
+</arguments>
+<doc>
+Click an element located by &lt;b&gt;locator&lt;/b&gt; at &lt;b&gt;xOffset&lt;/b&gt; and &lt;b&gt;yOffset&lt;/b&gt; location.
+
+Useful for image map links.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _xOffset_: horizontal offset.
+- _yOffset_: vertical offset.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Click Element At Coordinates | id=imgmap | 10 | 20 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Click Image">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Click an image located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Click Image | xpath=//h3[1] |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Click Link">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Click a link located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Click Link | xpath=//h3[1] |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Close All Browsers">
+<arguments>
+</arguments>
+<doc>
+Closes all browser sessions
+
+Quits silently, if there are no running sessions.
+
+*Usage Examples*
+
+| Close All Browsers |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Close Browser">
+<arguments>
+<arg>sessionIdOrAlias=NONE</arg>
+</arguments>
+<doc>
+Closes the browser window.
+
+If a session id or alias is provided uses it to locate the session associated with it and closes it.
+No action will be taken if a session could not found. If not provided, closes the recently opened session.
+
+*Arguments*
+
+- _sessionIdOrAlias_: Session Id or Alias for a given browser session.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com | firefox | google |
+| ${sessionId} = Open Browser | www.yahoo.com | firefox | yahoo |
+| Close Browser |
+| Close Browser | google |
+| Close Browser | ${sessionId} |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Close Window">
+<arguments>
+</arguments>
+<doc>Close the current window.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Close Window |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Confirm Action">
+<arguments>
+<arg>action</arg>
+</arguments>
+<doc>
+Dismisses currently shown confirmation dialog and returns its message.
+
+*Arguments:*
+
+- _action_: the action to choose ('OK' or 'Cancel')
+
+*Usage Example(s):*
+
+| Confirm Action | OK |
+| Confirm Action | Cancel |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Delete All Cookies">
+<arguments>
+</arguments>
+<doc>
+Delete all cookies in the current browser driver session.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Delete All Cookies |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Delete Cookie">
+<arguments>
+<arg>name</arg>
+</arguments>
+<doc>
+Deletes a cookie with given *name* in the current browser driver session.
+
+*Arguments*
+
+- _name_: Name of the cookie to delete.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Delete Cookie | session_user |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Double Click Element">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Double-Click an element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Double Click Element | id=q |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Drag And Drop">
+<arguments>
+<arg>source</arg>
+<arg>target</arg>
+</arguments>
+<doc>
+Perform Drag-drop from source element located by &lt;b&gt;source&lt;/b&gt; to target element located by &lt;b&gt;target&lt;/b&gt;.
+
+*Arguments*
+- _source_: the source element locator string. Refer to locators section for more details.
+- _target_: the source element locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Drag And Drop | xpath=//h3[1] | name=receiver |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Drag And Drop By Offset">
+<arguments>
+<arg>source</arg>
+<arg>xOffset</arg>
+<arg>yOffset</arg>
+</arguments>
+<doc>
+Perform Drag-drop from source element located by &lt;b&gt;source&lt;/b&gt; to target element located by &lt;b&gt;xOffset&lt;/b&gt; and &lt;b&gt;yOffset&lt;/b&gt;.
+
+*Arguments*
+- _source_: the source element locator string. Refer to locators section for more details.
+- _xOffset_:
+- _yOffset_:
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Drag And Drop By Offset | xpath=//h3[1] | 300 | 400 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Is Hidden">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Should Be Clickable">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify element located by &lt;b&gt;locator&lt;/b&gt; is clickable.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Clickable | xpath=//*[@id="fkbx-spch"] |
+| Element Should Be Clickable | xpath=//*[@id="fkbx-spch"] | searchbox is is not clickable |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Should Be Disabled">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Verify element located by the &lt;b&gt;locator&lt;/b&gt; is disabled.&lt;br&gt;
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Enabled | id=q |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Should Be Enabled">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Verify element located by the &lt;b&gt;locator&lt;/b&gt; is enabled.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Enabled | id=q |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Should Be Selected">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify element located by &lt;b&gt;locator&lt;/b&gt; is selected.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Selected | id=q |
+| Element Should Be Selected | id=q | Element is not selected |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Should Be Visible">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify element located by &lt;b&gt;locator&lt;/b&gt; is visible.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Be Visible | id=q |
+| Element Should Be Visible | id=q | searchbox is found not visible |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Should Not Be Clickable">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify element located by &lt;b&gt;locator&lt;/b&gt; is &lt;u&gt;not&lt;/u&gt; clickable.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Not Be Clickable | xpath=//*[@id="fkbx-spch"] |
+| Element Should Not Be Clickable | xpath=//*[@id="fkbx-spch"] | searchbox is is found clickable |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Should Not Be Selected">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify element located by &lt;b&gt;locator&lt;/b&gt; is &lt;u&gt;not&lt;/u&gt; selected.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Not Be Selected | id=q |
+| Element Should Not Be Selected | id=q | Element is found selected |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Should Not Be Visible">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify element located by &lt;b&gt;locator&lt;/b&gt; is hidden.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Should Not Be Visible | id=q |
+| Element Should Not Be Visible | id=q | searchbox is found to be visible |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Text Should Be">
+<arguments>
+<arg>locator</arg>
+<arg>text</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the element text identified by *locator* is equal to given *text*.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _text_: the expected text.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Text Should Be | xpath=//*[@id='gs_tti0'] | search |
+| Element Text Should Be | xpath=//*[@id='gs_tti0'] | search | Text of search box not 'search' |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Text Should Contain">
+<arguments>
+<arg>locator</arg>
+<arg>text</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the element text identified by &lt;b&gt;locator&lt;/b&gt; contains &lt;b&gt;text&lt;/b&gt;.
+This is a _contains_ version of #elementTextShouldBe
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _text_: the expected text.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Text Should Contain | xpath=//*[@id='gs_tti0'] | My Profile |
+| Element Text Should Contain | xpath=//*[@id='gs_tti0'] | My Profile | My profile link not found |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Text Should Not Be">
+<arguments>
+<arg>locator</arg>
+<arg>text</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the element text identified by *locator* is *not* equal to given *text*.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _text_: the expected text.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Text Should Not Be | xpath=//*[@id='gs_tti0'] | search |
+| Element Text Should Not Be | xpath=//*[@id='gs_tti0'] | search | Text of search box not expected to be 'search' |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Element Text Should Not Contain">
+<arguments>
+<arg>locator</arg>
+<arg>text</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the element text identified by &lt;b&gt;locator&lt;/b&gt; does &lt;u&gt;not&lt;/u&gt; contain &lt;b&gt;text&lt;/b&gt;.
+
+This is a _contains_ version of #elementTextShouldNotBe
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _text_: the expected text.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Element Text Should Not Contain | xpath=//*[@id='gs_tti0'] | profile |
+| Element Text Should Not Contain | xpath=//*[@id='gs_tti0'] | search | some message |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Execute Async Javascript">
+<arguments>
+<arg>*scriptLine</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Execute Async Javascript From File">
+<arguments>
+<arg>scriptFile</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Execute Javascript">
+<arguments>
+<arg>*scriptLine</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Execute Javascript From File">
+<arguments>
+<arg>scriptFile</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Focus">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Focus an element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Focus | id=q |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Cookie Value">
+<arguments>
+<arg>name</arg>
+</arguments>
+<doc>
+Returns the value of the cookie with given *name*.
+
+*Arguments*
+- _name_: cookie name.
+
+*Throws*
+Throws failure error if a cookie with the given name is not found.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${val} = Get Cookie Value | session_id |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Cookies">
+<arguments>
+</arguments>
+<doc>
+Retuns all the cookies set on current browser driver session.
+
+Returns in the format cookieName=cookieValue separated by ':'
+
+*Usage Example(s)*:
+
+| Open Browser | www.google.com |
+| ${cookies} = Get Cookies |
+| Log ${cookies} |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Element Text">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Return the element text located by &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${text} = Get Element Text | id=q |
+| Log | ${text} |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Horizontal Position">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Returns the horizontal position of the element located by &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${xPos} = | Get Horizontal Position | id=q |
+| Log | ${xPos} |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Location">
+<arguments>
+</arguments>
+<doc>
+Return current window location.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${windowLocation} = | Get Window Location |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Source">
+<arguments>
+</arguments>
+<doc>
+Returns the current page source.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${pageSource} = | Get Source |
+| Log | ${pageSource} |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Title">
+<arguments>
+</arguments>
+<doc>
+Returns the current page title.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${pageTitle} = | Get Title |
+| Log | ${pageTitle} |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Value">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Vertical Position">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Returns the vertical position of the element located by &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${yPos} = | Get Vertical Position | id=q |
+| Log | ${yPos} |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Window Size">
+<arguments>
+</arguments>
+<doc>
+Get current window size.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| ${windowSize} = | Get Window Size |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Go Back">
+<arguments>
+</arguments>
+<doc>Navigate back in the current browser window.
+
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Go To | www.amazon.com |
+| Go Back |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Go Forward">
+<arguments>
+</arguments>
+<doc>Navigate forward in the current browser window.
+
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Go To | www.amazon.com |
+| Go Back |
+| Go Forward |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Go To">
+<arguments>
+<arg>url</arg>
+</arguments>
+<doc>Navigate the browser to the specified &lt;b&gt;url&lt;/b&gt;.
+
+*Arguments*
+
+- _url_: the URL navigate to.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Go To | www.amazon.com |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Input Password">
+<arguments>
+<arg>locator</arg>
+<arg>password</arg>
+</arguments>
+<doc>
+Types the given password into password field identified by the &lt;b&gt;locator&lt;/b&gt;.
+
+Clears the old value in the password field before typing
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _password_: password to type
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Input Password | id=passwd | pass1234 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Input Text">
+<arguments>
+<arg>locator</arg>
+<arg>text</arg>
+</arguments>
+<doc>
+Types the given text into the text field identified by the &lt;b&gt;locator&lt;/b&gt;
+
+Clears the old value in the text field before typing.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- text: text to type
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Input Text | name=username | user101 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Location Should Be">
+<arguments>
+<arg>url</arg>
+</arguments>
+<doc>
+Verify the current window location is equals to &lt;b&gt;url&lt;/b&gt;.
+
+- _url_: the expected url.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Location Should Be | https://www.google.com/ |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Location Should Contain">
+<arguments>
+<arg>url</arg>
+</arguments>
+<doc>
+Verify the current window location contains &lt;b&gt;url&lt;/b&gt;.
+
+- _url_: the expected url.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Location Should Contain | https |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Maximize Window">
+<arguments>
+</arguments>
+<doc>Maximize the current window.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Maximize Window |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Mouse Down">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Mouse-down on an element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Down | xpath=//h3[1] |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Mouse Down On Link">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Mouse-down on a link located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Down On Link | xpath=//h3[1] |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Mouse Out">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Mouse-out from an element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Out | xpath=//h3[1] |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Mouse Over">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Mouse-over on an element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Over | xpath=//h3[1] |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Mouse Up">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Mouse-up from an element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Mouse Up | xpath=//h3[1] |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Open Browser">
+<arguments>
+<arg>url</arg>
+<arg>browserName=firefox</arg>
+<arg>alias=NONE</arg>
+<arg>capabilities=NONE</arg>
+</arguments>
+<doc>Opens a browser session and navigate to the given URL.
+
+*Arguments*
+
+- _url_: The URL to navigate to
+- _browserName_: Name of the browser. Valid browser types: IEXPLORER, FIREFOX, CHROME, SAFARI. default is FIREFOX browser
+- _alias_: An alias for this browser session. Optional
+- _capabilities_: the JSON string of capabilities to use for this browser.
+
+*Returns*
+
+A session id associated with this browser session.
+
+*Usage Example(s):*
+
+| Open Browser | http://www.google.com |
+| Open Browser | http://www.google.com | FIREFOX |
+| Open Browser | http://www.google.com | chrome |
+| Open Browser | http://www.google.com | FIREFOX | google |
+| Open Browser | http://www.google.com | firefox | {"capabilities": {"moz:firefoxOptions": {"args": ["-headless"], "prefs": {"dom.ipc.processCount": 8 }, "log": {"level": "trace"} } } } |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Open Context Menu">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Open Context menu on the element located by the  &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Open Context Menu | xpath=//h3[1] |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Contain Checkbox">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page contains the checkbox element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+The locator must be able to locate an checkbox element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Checkbox | name=feelinglucky |
+| Page Should Contain Checkbox | name=feelinglucky | page does not contain the feelinglucky checkbox |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Contain Element">
+<arguments>
+<arg>locator</arg>
+<arg>tag=NONE</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page contains the given element with optional &lt;b&gt;tag&lt;/b&gt; and located by the &lt;b&gt;locator&lt;/b&gt;.
+
+Also supports checking the element to be located is of specific tag. Which is useful in locating custom element tags.
+
+*Arguments:*
+- _locator_: the locator string.
+- _tag_: Optional, Ensures the element to be located is of type specific tag.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Element | id=username | input |
+| Page Should Contain Element | id=username |
+| Page Should Contain Element | id=username | customtag | expcted element could not be found |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Contain Image">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page contains the image element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+The locator must be able to locate an image element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Image | name=logo |
+| Page Should Contain Image | id=logo | page does not contain the logo image |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Contain Link">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page contains the given link element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+The locator must be able to locate a link element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Link | id=search |
+| Page Should Contain Link | id=search | page does not contain the search link |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Contain Radio Button">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page contains the radio button element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+The locator must be able to locate an radio button element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Radio Button | name=feelinglucky |
+| Page Should Contain Radio Button | name=feelinglucky | page does not contain the feelinglucky radio |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Contain Text">
+<arguments>
+<arg>text</arg>
+</arguments>
+<doc>
+Verify the current page contains the given &lt;b&gt;text&lt;/b&gt;.
+
+*Arguments:*
+- _text_: expected text
+
+*Usage Example(s):
+
+| Open Browser | www.google.com |
+| Page Should Contain Text | Im' Feeling Lucky |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Contain Textfield">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page contains the text element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+The locator must be able to locate an input text element.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Contain Textfield | name=q |
+| Page Should Contain Textfield | name=q | page does not contain the search text input|</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Not Contain Checkbox">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page does not contain the checkbox element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Checkbox | name=logo |
+| Page Should Not Contain Checkbox | id=logo | page not expcted to contain the logo checkbox |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Not Contain Element">
+<arguments>
+<arg>locator</arg>
+<arg>tag=NONE</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page does not contain the given element with optional &lt;b&gt;tag&lt;/b&gt; and located by the &lt;b&gt;locator&lt;/b&gt;.
+
+Also supports checking the element to be located is of specific tag. Which is useful in locating custom element tags.
+
+*Arguments:*
+- _locator_: the locator string.
+- _tag_: Optional, Ensures the element to be located is of type specific tag.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Element | id=username | input |
+| Page Should Not Contain Element | id=username |
+| Page Should Not Contain Element | id=username | customtag | username element is not expected, but found |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Not Contain Image">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page does not contain the image element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Image | name=logo |
+| Page Should Not Contain Image | id=logo | page not expcted to contain the logo image |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Not Contain Link">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page not contains the given link element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Link | id=search |
+| Page Should Not Contain Link | id=search | page contains the search link |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Not Contain Radio Button">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page does not contain the radio button element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Radio Button | name=logo |
+| Page Should Not Contain Radio Button | id=logo | page not expcted to contain the logo radio |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Not Contain Text">
+<arguments>
+<arg>text</arg>
+</arguments>
+<doc>
+Verify the current page does not contain the given &lt;b&gt;text&lt;/b&gt;.
+
+*Arguments:*
+- _text_: expected text
+
+*Usage Example(s):
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Text | Welcome |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Page Should Not Contain Textfield">
+<arguments>
+<arg>locator</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the current page not contains the text element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+
+*Arguments:*
+- _locator_: the locator string.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Page Should Not Contain Textfield | name=q |
+| Page Should Not Contain Textfield | name=q | page contains the search text input |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Refresh">
+<arguments>
+</arguments>
+<doc>
+Refresh current browser window.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Refresh |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Reload Page">
+<arguments>
+</arguments>
+<doc>Reload current page.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Reload Page |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Select Checkbox">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+Selects the checkbox identified by the &lt;b&gt;locator&lt;/b&gt;. If the checkbox is already checked, does nothing.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Select Checkbox | id=subscribe |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Send Keys">
+<arguments>
+<arg>locator</arg>
+<arg>key</arg>
+</arguments>
+<doc>Send input or keys &lt;b&gt;key&lt;/b&gt; to the element located by the &lt;b&gt;locator&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- key: the text to type.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Send Keys | id=emailaddress | james.bond@jamesb.com |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Set Window Size">
+<arguments>
+<arg>width</arg>
+<arg>height</arg>
+</arguments>
+<doc>
+Set the &lt;b&gt;width&lt;/b&gt; and &lt;b&gt;height&lt;/b&gt; to the current widnow.
+
+*Arguments:*
+
+- _width_: width to set.
+- _height_:  height to set.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Set Window Size | 300 | 400 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Simulate Event">
+<arguments>
+<arg>locator</arg>
+<arg>event</arg>
+</arguments>
+<doc>
+Simulate a javascript/dom &lt;b&gt;event&lt;/b&gt; like 'click', 'mouseOver' etc. on an element located by the &lt;b&gt;locator&lt;/b&gt;
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- event: the event to simulate.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Simulate Event | id=emailaddress | click |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Submit Form">
+<arguments>
+<arg>locator=NONE</arg>
+</arguments>
+<doc>
+Submits the form identified by the &lt;b&gt;locator&lt;/b&gt;.
+
+If the locator is empty, the first form in the page will be submitted.
+
+*Arguments*
+- _locator_: Optional. the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Submit Form |
+| Submit Form | xpath=//form[@id=form1] |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Switch Browser">
+<arguments>
+<arg>sessionIdOrAlias</arg>
+</arguments>
+<doc>
+Switch to another browser session provided with session id/alias.
+
+*Arguments*
+
+- _sessionIdOrAlias_: Session Id or Alias associated with a session to switch
+
+*Usage Examples:*
+
+| Open Browser | www.google.com | firefox | google |
+| ${sessionId} = Open Browser | www.yahoo.com | firefox | yahoo |
+| Switch Browser | google |
+| Switch Browser | ${sessionId} |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Text Field Value Should Be">
+<arguments>
+<arg>locator</arg>
+<arg>value</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; is equal to &lt;b&gt;value&lt;/b&gt;
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Field Value Should Be | name=username | user101 |
+| Text Field Value Should Be | name=username | user101 | value of the username field is not user101 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Text Field Value Should Contain">
+<arguments>
+<arg>locator</arg>
+<arg>value</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; contains &lt;b&gt;value&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Field Value Should Contain | name=username | user101 |
+| Text Field Value Should Contain | name=username | user101 | username field value does not contain user101 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Text Field Value Should Not Be">
+<arguments>
+<arg>locator</arg>
+<arg>value</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; is equal to &lt;b&gt;value&lt;/b&gt;
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Field Value Should Not Be | name=username | user101 |
+| Text Field Value Should Not Be | name=username | user101 | value of the username field is user101 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Text Field Value Should Not Contain">
+<arguments>
+<arg>locator</arg>
+<arg>value</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; does not contain &lt;b&gt;value&lt;/b&gt;.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Field Value Should Not Contain | name=username | 101 |
+| Text Field Value Should Not Contain | name=username | 101 | username field value does not contain user101 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Title Should Be">
+<arguments>
+<arg>title</arg>
+</arguments>
+<doc>
+Verify the current page title should be equal to &lt;b&gt;title&lt;/b&gt;.
+
+*Arguments:*
+- _title_: Expected title
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Title Should Be | Google |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Title Should Contain">
+<arguments>
+<arg>title</arg>
+</arguments>
+<doc>
+Verify the page title to contain the &lt;b&gt;title&lt;/b&gt;.
+
+*Arguments:*
+- _title_: Expected title
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Title Should Contain | Search |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Title Should Not Be">
+<arguments>
+<arg>title</arg>
+</arguments>
+<doc>
+Verify the current page title is not equal to &lt;b&gt;title&lt;/b&gt;.
+
+*Arguments:*
+- _title_: Expected title
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Title Should Not Be | Search Results |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Title Should Not Contain">
+<arguments>
+<arg>title</arg>
+</arguments>
+<doc>
+Verify the page title to not contain the &lt;b&gt;title&lt;/b&gt;.
+
+*Arguments:*
+- _title_: Expected title
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Title Should Not Contain | results |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Un Select Checkbox">
+<arguments>
+<arg>locator</arg>
+</arguments>
+<doc>
+UnSelects the checkbox identified by the &lt;b&gt;locator&lt;/b&gt;. If the checkbox is not checked, selects the checkbox.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| UnSelect Checkbox | id=subscribe |</doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>
