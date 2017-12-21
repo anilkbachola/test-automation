@@ -1,6 +1,4 @@
-# Robot Framework Selenium Library
-
-## Introduction
+### Introduction
 
 Robot Framework `SeleniumLibrary` is `Java` implementation library for web testing that leverages Selenium 3 libraries.
 
@@ -17,7 +15,7 @@ Selenium: 3.7.1
 Robot Framework: 3.0.2
 ```
 
-## Usage
+### Usage
 
    +  Add this library as a dependency to the project hosting the test suites.
 
@@ -61,7 +59,7 @@ Robot Framework: 3.0.2
            Open Browser    ${Google URL}     ${Browser}   goog1
      ```
 
-## Extending Keywords
+### Keyword Extensions
 
    One of the best feature of `Robot Framework` is its ability to `extend` and `compose` keywords. 
    Robot Framework supports writing custom keywords into its own Keyword `Resource` files, which can be later imported into Test suites.
@@ -89,13 +87,7 @@ Robot Framework: 3.0.2
         Open Browser    ${url}    FIREFOX
    ```
 
-## Keyword Documentation
-
-   Click for [Core Keywords](https://anilkbachola.github.io/test-automation/SeleniumLibrary/keywords/SeleniumLibrary-core.html) documentation.
-   
-   Click for [BDD Keywords](https://anilkbachola.github.io/test-automation/SeleniumLibrary/keywords/SeleniumLibrary-bdd.html) documentation.
-
-## About Web Driver
+### About Web Driver
 
 WebDriver is a remote control interface that enables introspection and control of user agents. 
 It provides a platform- and language-neutral wire protocol as a way for out-of-process programs to remotely instruct the behavior of web browsers.
@@ -103,9 +95,9 @@ It provides a platform- and language-neutral wire protocol as a way for out-of-p
 W3C Web Driver Candidate Spec: https://w3c.github.io/webdriver/webdriver-spec.html
 
 
-### WebDriver Capabilities
+#### WebDriver Capabilities
 
-#### Introduction
+##### Introduction
 
 WebDriver capabilities are used to communicate the  features supported by a given implementation.
 The local end may use capabilities to define which features it requires the remote end to satisfy when creating a new session. 
@@ -177,7 +169,7 @@ WebDriver Spec#capabilities: https://w3c.github.io/webdriver/webdriver-spec.html
 | loggingPrefs              | loggingprefs object |
 | webdriver.logging.profiler.enabled | boolean |    | 
 
-#### Firefox(geckodriver) Capabilities
+##### Firefox(geckodriver) Capabilities
 
 geckodriver also supports capabilities with the `moz:` prefix, which can be used to define Firefox-specific capabilities.
 
@@ -231,7 +223,7 @@ The following example selects a specific Firefox binary to run with a prepared p
 
 System.setProperty("webdriver.gecko.driver", "/Users/bachola/_tools/geckodriver");
 
-#### Chrome(chromeDriver) Capabilities
+##### Chrome(chromeDriver) Capabilities
 
 chrome driver also supports capabilities with `goog:` prefix, which can be used to define Chrome-specific capabilities.
 
@@ -287,7 +279,7 @@ chrome driver also supports capabilities with `goog:` prefix, which can be used 
 
 System.setProperty("webdriver.chrome.driver", "/Users/bachola/_tools/chromedriver");
 
-#### Internet Explorer
+##### Internet Explorer
 
 |  Capability Key   | Value Type| Description               |
 | ----------------- | --------- | ------------------------- |
@@ -308,7 +300,7 @@ System.setProperty("webdriver.chrome.driver", "/Users/bachola/_tools/chromedrive
 | unexpectedAlertBehaviour  | string    | Same as unexpectedPromptBehaviour, Valid values: Default (Indicates the behavior is not set), Ignore, Accept, Dismiss. |
 | ie.validateCookieDocumentType | string |
 
-#### Safari
+##### Safari
 
 safari.options
 
@@ -319,7 +311,7 @@ safari.options
 | cleanSession      | boolean   | default to false. |
 
 
-#### Opera
+##### Opera
 
 operaOptions
 
@@ -330,7 +322,7 @@ operaOptions
 | extensions        | list of strings    | A list of Chrome extensions to install on startup. Each item in the list should be a base-64 encoded packed Chrome extension (.crx) |
 
 
-#### Edge
+##### Edge
 
 edgeOptions
 
@@ -389,7 +381,7 @@ But only relevant options will be applied based on the `browserName` argument to
 }
 ```
 
-### Locating UI Elements
+#### Locating UI Elements
 
 Locating elements in Selenium can be done by using certain type of locators. 
 The keywords in this Selenium Library takes 'locator' string as argument. 
@@ -397,7 +389,7 @@ The locator string will be in format `locatorType=locatorText (for xpath it can 
 
 Following types of locator strings are supported in this library.
 
-#### Id Locator
+##### Id Locator
 
 This is the most efficient and preferred way to locate an element.
 
@@ -410,7 +402,7 @@ Locator String:
 id=coolestWidgetEvah
 ```
 
-#### Class Name Locator
+##### Class Name Locator
 
 “Class” in this case refers to the attribute on the DOM element. 
 Often in practical use there are many DOM elements with the same class name, thus finding multiple elements becomes the more practical option over finding the first element.
@@ -424,7 +416,7 @@ Locator String:
 classname=cheese
 ```
 
-#### TagName Locator
+##### TagName Locator
 The DOM Tag Name of the element.
 
 Example:
@@ -437,7 +429,7 @@ Locator String:
 tag=iframe
 ```
 
-#### Name Locator
+##### Name Locator
 
 Find the element with matching name attribute.
 
@@ -450,7 +442,7 @@ Locator String:
 name=cheese
 ```
 
-#### LinkText Locator
+##### LinkText Locator
 
 Find the link element with matching visible text.
 
@@ -466,7 +458,7 @@ linktext=http://www.google.com/search?q=cheese
 
 ```
 
-#### CSS Locator
+##### CSS Locator
 
 Like the name implies it is a locator strategy by css. Native browser support is used by default, so please refer to w3c css selectors for a list of generally available css selectors. 
 If a browser does not have native support for css queries, then Sizzle is used.
@@ -482,7 +474,7 @@ Locator String:
 css=#food span.dairy.aged
 ```
 
-#### XPath Locator
+##### XPath Locator
 At a high level, WebDriver uses a browser’s native XPath capabilities wherever possible.
 On those browsers that don’t have native XPath support, Selenium provided our own implementation.
 
@@ -500,7 +492,7 @@ xpath=//input
 //input - if a locator starts with '//' XPATH type is assumed.
 ```
 
-#### IdOrName Locator
+##### IdOrName Locator
 
 Find the element with matching name or id attribute.
 
@@ -514,7 +506,7 @@ Locator String:
 IdOrName=example
 ```
 
-#### Sizzle Locator
+##### Sizzle Locator
 
 Refer to CSS Locator.
 

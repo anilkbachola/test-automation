@@ -1,6 +1,4 @@
-# Robot Framework Database Library
-
-## Introduction
+### Introduction
 
    Robot Framework `DatabaseLibrary` is `Java` implementation library for writing tests against database.
    
@@ -16,7 +14,7 @@
    Robot Framework: 3.0.2
    ```
    
-## Usage
+### Usage
 
    +  Add this library as a dependency to the project hosting the test suites.
    
@@ -55,7 +53,7 @@
           [Teardown]    Close All Connections  
       ```
 
-## Extending Keywords
+### Keyword Extensions
 
    One of the best feature of `Robot Framework` is its ability to `extend` and `compose` keywords. 
    Robot Framework supports writing custom keywords into its own Keyword `Resource` files, which can be later imported into Test suites.
@@ -81,9 +79,3 @@
         [Documentation] close the connection
         Close Connection
    ```
-
-## Keyword Documentation
-
-   Click for [Core Keywords](https://anilkbachola.github.io/test-automation/DatabaseLibrary/keywords/DatabaseLibrary-core.html) documentation.
-      
-   Click for [BDD Keywords](https://anilkbachola.github.io/test-automation/DatabaseLibrary/keywords/DatabaseLibrary-bdd.html) documentation.
