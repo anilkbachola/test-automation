@@ -27,7 +27,7 @@
    
 ## Selenium Library
 
-## Keyword Documentation
+### Keyword Documentation
 
    + [Core Keywords Documentation](SeleniumLibrary/keywords/SeleniumLibrary-core.html)
    + [BDD Style Keywords Documentation](SeleniumLibrary/keywords/SeleniumLibrary-bdd.html)

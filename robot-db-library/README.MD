@@ -27,6 +27,11 @@
            <artifactId>robot-db-library</artifactId>
            <version>1.0</version>
        </dependency>
+       <dependency>
+           <groupId>com.rise.autotest</groupId>
+           <artifactId>robot-util</artifactId>
+           <version>1.0</version>
+       </dependency> 
       ```
       
    + Import the library into your test suites file and start using the keywords. 
@@ -54,36 +59,7 @@
           I close the connection
           [Teardown]    Close All Connections  
       ```
+## Documentation
 
-## Extending Keywords
-
-   One of the best feature of `Robot Framework` is its ability to `extend` and `compose` keywords. 
-   Robot Framework supports writing custom keywords into its own Keyword `Resource` files, which can be later imported into Test suites.
-   
-   The keywords in this library can be extended are composed in to a more generic keywords to be used in test suites.
-   It Library show-cases a sample of extending the core keywords to behavior-driven style keywords and also showcases how to generate documentation for these extended keywords.
-   
-   Below is a sample resource file with extended keywords.
-   
-   __DatabaseLibrary_BDD_Keywords.robot__
-   ```text
-    *** Settings ***
-    Documentation       Behavior-driven keywords, extended from core keywords
-    Library             DatabaseLibrary
-    
-    *** Keywords ***
-    I open connection with properties
-        [Documentation]    Opens a new connection. Refer to `Open Connection` core keyword.
-        [Arguments]    ${configFile}
-        Open Connection    ${configFile}
-    
-    I close the connection
-        [Documentation] close the connection
-        Close Connection
-   ```
-
-## Keyword Documentation
-
-   Click for [Core Keywords](https://anilkbachola.github.io/test-automation/DatabaseLibrary/keywords/DatabaseLibrary-core.html) documentation.
+   [Database Library](https://anilkbachola.github.io/test-automation/) documentation.
       
-   Click for [BDD Keywords](https://anilkbachola.github.io/test-automation/DatabaseLibrary/keywords/DatabaseLibrary-bdd.html) documentation.
