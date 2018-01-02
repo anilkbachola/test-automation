@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keywordspec format="ROBOT" type="library" generated="20171220 13:51:39" name="SeleniumLibrary">
+<keywordspec format="ROBOT" type="library" generated="20180102 15:42:15" name="SeleniumLibrary">
 <version>1.0-SNAPSHOT</version>
 <scope>global</scope>
 <namedargs>yes</namedargs>
@@ -39,7 +39,7 @@ Adds a cookie to the current browser driver session.
 <doc>
 Verify an alert is present and dismiss it.
 
-If &lt;b&gt;text&lt;/b&gt; is a non-empty string, then it is also verified that the message of the alert equals to text.
+If *text* is a non-empty string, then it is also verified that the message of the alert equals to text.
 
 *Arguments:*
 - _text_: Text on the alter window.
@@ -84,7 +84,7 @@ If &lt;b&gt;text&lt;/b&gt; is a non-empty string, then it is also verified that 
 <arg>filePath</arg>
 </arguments>
 <doc>
-Types the given &lt;b&gt;filePath&lt;/b&gt; into the input field identified by &lt;b&gt;locator&lt;/b&gt;
+Types the given *filePath* into the input field identified by *locator*
 
 This keyword is most often used to input files into upload forms.
 The file specified with filePath must be available on the same host where the Selenium Server is running.
@@ -105,7 +105,7 @@ The file specified with filePath must be available on the same host where the Se
 <arg>locator</arg>
 </arguments>
 <doc>
-Clears the element text located by &lt;b&gt;locator&lt;/b&gt;.
+Clears the element text located by *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -122,7 +122,7 @@ Clears the element text located by &lt;b&gt;locator&lt;/b&gt;.
 <arg>locator</arg>
 </arguments>
 <doc>
-Click an element located by the &lt;b&gt;locator&lt;/b&gt;.
+Click an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -141,7 +141,7 @@ Click an element located by the &lt;b&gt;locator&lt;/b&gt;.
 <arg>yOffset</arg>
 </arguments>
 <doc>
-Click an element located by &lt;b&gt;locator&lt;/b&gt; at &lt;b&gt;xOffset&lt;/b&gt; and &lt;b&gt;yOffset&lt;/b&gt; location.
+Click an element located by *locator* at *xOffset* and *yOffset* location.
 
 Useful for image map links.
 
@@ -162,7 +162,7 @@ Useful for image map links.
 <arg>locator</arg>
 </arguments>
 <doc>
-Click an image located by the &lt;b&gt;locator&lt;/b&gt;.
+Click an image located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -179,7 +179,7 @@ Click an image located by the &lt;b&gt;locator&lt;/b&gt;.
 <arg>locator</arg>
 </arguments>
 <doc>
-Click a link located by the &lt;b&gt;locator&lt;/b&gt;.
+Click a link located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -295,7 +295,7 @@ Deletes a cookie with given *name* in the current browser driver session.
 <arg>locator</arg>
 </arguments>
 <doc>
-Double-Click an element located by the &lt;b&gt;locator&lt;/b&gt;.
+Double-Click an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -313,7 +313,7 @@ Double-Click an element located by the &lt;b&gt;locator&lt;/b&gt;.
 <arg>target</arg>
 </arguments>
 <doc>
-Perform Drag-drop from source element located by &lt;b&gt;source&lt;/b&gt; to target element located by &lt;b&gt;target&lt;/b&gt;.
+Perform Drag-drop from source element located by *source* to target element located by *target*.
 
 *Arguments*
 - _source_: the source element locator string. Refer to locators section for more details.
@@ -333,7 +333,7 @@ Perform Drag-drop from source element located by &lt;b&gt;source&lt;/b&gt; to ta
 <arg>yOffset</arg>
 </arguments>
 <doc>
-Perform Drag-drop from source element located by &lt;b&gt;source&lt;/b&gt; to target element located by &lt;b&gt;xOffset&lt;/b&gt; and &lt;b&gt;yOffset&lt;/b&gt;.
+Perform Drag-drop from source element located by *source* to target element located by *xOffset* and *yOffset*.
 
 *Arguments*
 - _source_: the source element locator string. Refer to locators section for more details.
@@ -362,7 +362,7 @@ Perform Drag-drop from source element located by &lt;b&gt;source&lt;/b&gt; to ta
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify element located by &lt;b&gt;locator&lt;/b&gt; is clickable.
+Verify element located by *locator* is clickable.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -381,7 +381,7 @@ Verify element located by &lt;b&gt;locator&lt;/b&gt; is clickable.
 <arg>locator</arg>
 </arguments>
 <doc>
-Verify element located by the &lt;b&gt;locator&lt;/b&gt; is disabled.&lt;br&gt;
+Verify element located by the *locator* is disabled.&lt;br&gt;
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -398,7 +398,7 @@ Verify element located by the &lt;b&gt;locator&lt;/b&gt; is disabled.&lt;br&gt;
 <arg>locator</arg>
 </arguments>
 <doc>
-Verify element located by the &lt;b&gt;locator&lt;/b&gt; is enabled.
+Verify element located by the *locator* is enabled.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -416,7 +416,7 @@ Verify element located by the &lt;b&gt;locator&lt;/b&gt; is enabled.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify element located by &lt;b&gt;locator&lt;/b&gt; is selected.
+Verify element located by *locator* is selected.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -436,7 +436,7 @@ Verify element located by &lt;b&gt;locator&lt;/b&gt; is selected.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify element located by &lt;b&gt;locator&lt;/b&gt; is visible.
+Verify element located by *locator* is visible.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -456,7 +456,7 @@ Verify element located by &lt;b&gt;locator&lt;/b&gt; is visible.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify element located by &lt;b&gt;locator&lt;/b&gt; is &lt;u&gt;not&lt;/u&gt; clickable.
+Verify element located by *locator* is &lt;u&gt;not&lt;/u&gt; clickable.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -476,7 +476,7 @@ Verify element located by &lt;b&gt;locator&lt;/b&gt; is &lt;u&gt;not&lt;/u&gt; c
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify element located by &lt;b&gt;locator&lt;/b&gt; is &lt;u&gt;not&lt;/u&gt; selected.
+Verify element located by *locator* is &lt;u&gt;not&lt;/u&gt; selected.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -496,7 +496,7 @@ Verify element located by &lt;b&gt;locator&lt;/b&gt; is &lt;u&gt;not&lt;/u&gt; s
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify element located by &lt;b&gt;locator&lt;/b&gt; is hidden.
+Verify element located by *locator* is hidden.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -539,7 +539,7 @@ Verify the element text identified by *locator* is equal to given *text*.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the element text identified by &lt;b&gt;locator&lt;/b&gt; contains &lt;b&gt;text&lt;/b&gt;.
+Verify the element text identified by *locator* contains *text*.
 This is a _contains_ version of #elementTextShouldBe
 
 *Arguments*
@@ -584,7 +584,7 @@ Verify the element text identified by *locator* is *not* equal to given *text*.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the element text identified by &lt;b&gt;locator&lt;/b&gt; does &lt;u&gt;not&lt;/u&gt; contain &lt;b&gt;text&lt;/b&gt;.
+Verify the element text identified by *locator* does &lt;u&gt;not&lt;/u&gt; contain *text*.
 
 This is a _contains_ version of #elementTextShouldNotBe
 
@@ -638,7 +638,7 @@ This is a _contains_ version of #elementTextShouldNotBe
 <arg>locator</arg>
 </arguments>
 <doc>
-Focus an element located by the &lt;b&gt;locator&lt;/b&gt;.
+Focus an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -691,7 +691,7 @@ Returns in the format cookieName=cookieValue separated by ':'
 <arg>locator</arg>
 </arguments>
 <doc>
-Return the element text located by &lt;b&gt;locator&lt;/b&gt;.
+Return the element text located by *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -709,7 +709,7 @@ Return the element text located by &lt;b&gt;locator&lt;/b&gt;.
 <arg>locator</arg>
 </arguments>
 <doc>
-Returns the horizontal position of the element located by &lt;b&gt;locator&lt;/b&gt;.
+Returns the horizontal position of the element located by *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -776,7 +776,7 @@ Returns the current page title.
 <arg>locator</arg>
 </arguments>
 <doc>
-Returns the vertical position of the element located by &lt;b&gt;locator&lt;/b&gt;.
+Returns the vertical position of the element located by *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -835,7 +835,7 @@ Get current window size.
 <arguments>
 <arg>url</arg>
 </arguments>
-<doc>Navigate the browser to the specified &lt;b&gt;url&lt;/b&gt;.
+<doc>Navigate the browser to the specified *url*.
 
 *Arguments*
 
@@ -854,7 +854,7 @@ Get current window size.
 <arg>password</arg>
 </arguments>
 <doc>
-Types the given password into password field identified by the &lt;b&gt;locator&lt;/b&gt;.
+Types the given password into password field identified by the *locator*.
 
 Clears the old value in the password field before typing
 
@@ -875,7 +875,7 @@ Clears the old value in the password field before typing
 <arg>text</arg>
 </arguments>
 <doc>
-Types the given text into the text field identified by the &lt;b&gt;locator&lt;/b&gt;
+Types the given text into the text field identified by the *locator*
 
 Clears the old value in the text field before typing.
 
@@ -895,7 +895,7 @@ Clears the old value in the text field before typing.
 <arg>url</arg>
 </arguments>
 <doc>
-Verify the current window location is equals to &lt;b&gt;url&lt;/b&gt;.
+Verify the current window location is equals to *url*.
 
 - _url_: the expected url.
 
@@ -911,7 +911,7 @@ Verify the current window location is equals to &lt;b&gt;url&lt;/b&gt;.
 <arg>url</arg>
 </arguments>
 <doc>
-Verify the current window location contains &lt;b&gt;url&lt;/b&gt;.
+Verify the current window location contains *url*.
 
 - _url_: the expected url.
 
@@ -939,7 +939,7 @@ Verify the current window location contains &lt;b&gt;url&lt;/b&gt;.
 <arg>locator</arg>
 </arguments>
 <doc>
-Mouse-down on an element located by the &lt;b&gt;locator&lt;/b&gt;.
+Mouse-down on an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -956,7 +956,7 @@ Mouse-down on an element located by the &lt;b&gt;locator&lt;/b&gt;.
 <arg>locator</arg>
 </arguments>
 <doc>
-Mouse-down on a link located by the &lt;b&gt;locator&lt;/b&gt;.
+Mouse-down on a link located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -973,7 +973,7 @@ Mouse-down on a link located by the &lt;b&gt;locator&lt;/b&gt;.
 <arg>locator</arg>
 </arguments>
 <doc>
-Mouse-out from an element located by the &lt;b&gt;locator&lt;/b&gt;.
+Mouse-out from an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -990,7 +990,7 @@ Mouse-out from an element located by the &lt;b&gt;locator&lt;/b&gt;.
 <arg>locator</arg>
 </arguments>
 <doc>
-Mouse-over on an element located by the &lt;b&gt;locator&lt;/b&gt;.
+Mouse-over on an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1007,7 +1007,7 @@ Mouse-over on an element located by the &lt;b&gt;locator&lt;/b&gt;.
 <arg>locator</arg>
 </arguments>
 <doc>
-Mouse-up from an element located by the &lt;b&gt;locator&lt;/b&gt;.
+Mouse-up from an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1054,7 +1054,7 @@ A session id associated with this browser session.
 <arg>locator</arg>
 </arguments>
 <doc>
-Open Context menu on the element located by the  &lt;b&gt;locator&lt;/b&gt;.
+Open Context menu on the element located by the  *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1072,7 +1072,7 @@ Open Context menu on the element located by the  &lt;b&gt;locator&lt;/b&gt;.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page contains the checkbox element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page contains the checkbox element located by the *locator*.
 
 The locator must be able to locate an checkbox element.
 
@@ -1095,7 +1095,7 @@ The locator must be able to locate an checkbox element.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page contains the given element with optional &lt;b&gt;tag&lt;/b&gt; and located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page contains the given element with optional *tag* and located by the *locator*.
 
 Also supports checking the element to be located is of specific tag. Which is useful in locating custom element tags.
 
@@ -1119,7 +1119,7 @@ Also supports checking the element to be located is of specific tag. Which is us
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page contains the image element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page contains the image element located by the *locator*.
 
 The locator must be able to locate an image element.
 
@@ -1141,7 +1141,7 @@ The locator must be able to locate an image element.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page contains the given link element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page contains the given link element located by the *locator*.
 
 The locator must be able to locate a link element.
 
@@ -1163,7 +1163,7 @@ The locator must be able to locate a link element.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page contains the radio button element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page contains the radio button element located by the *locator*.
 
 The locator must be able to locate an radio button element.
 
@@ -1184,7 +1184,7 @@ The locator must be able to locate an radio button element.
 <arg>text</arg>
 </arguments>
 <doc>
-Verify the current page contains the given &lt;b&gt;text&lt;/b&gt;.
+Verify the current page contains the given *text*.
 
 *Arguments:*
 - _text_: expected text
@@ -1202,7 +1202,7 @@ Verify the current page contains the given &lt;b&gt;text&lt;/b&gt;.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page contains the text element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page contains the text element located by the *locator*.
 
 The locator must be able to locate an input text element.
 
@@ -1224,7 +1224,7 @@ The locator must be able to locate an input text element.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page does not contain the checkbox element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page does not contain the checkbox element located by the *locator*.
 
 
 *Arguments:*
@@ -1246,7 +1246,7 @@ Verify the current page does not contain the checkbox element located by the &lt
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page does not contain the given element with optional &lt;b&gt;tag&lt;/b&gt; and located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page does not contain the given element with optional *tag* and located by the *locator*.
 
 Also supports checking the element to be located is of specific tag. Which is useful in locating custom element tags.
 
@@ -1270,7 +1270,7 @@ Also supports checking the element to be located is of specific tag. Which is us
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page does not contain the image element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page does not contain the image element located by the *locator*.
 
 
 *Arguments:*
@@ -1291,7 +1291,7 @@ Verify the current page does not contain the image element located by the &lt;b&
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page not contains the given link element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page not contains the given link element located by the *locator*.
 
 *Arguments:*
 - _locator_: the locator string.
@@ -1311,7 +1311,7 @@ Verify the current page not contains the given link element located by the &lt;b
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page does not contain the radio button element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page does not contain the radio button element located by the *locator*.
 
 
 *Arguments:*
@@ -1331,7 +1331,7 @@ Verify the current page does not contain the radio button element located by the
 <arg>text</arg>
 </arguments>
 <doc>
-Verify the current page does not contain the given &lt;b&gt;text&lt;/b&gt;.
+Verify the current page does not contain the given *text*.
 
 *Arguments:*
 - _text_: expected text
@@ -1349,7 +1349,7 @@ Verify the current page does not contain the given &lt;b&gt;text&lt;/b&gt;.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the current page not contains the text element located by the &lt;b&gt;locator&lt;/b&gt;.
+Verify the current page not contains the text element located by the *locator*.
 
 
 *Arguments:*
@@ -1394,7 +1394,7 @@ Refresh current browser window.
 <arg>locator</arg>
 </arguments>
 <doc>
-Selects the checkbox identified by the &lt;b&gt;locator&lt;/b&gt;. If the checkbox is already checked, does nothing.
+Selects the checkbox identified by the *locator*. If the checkbox is already checked, does nothing.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1411,7 +1411,7 @@ Selects the checkbox identified by the &lt;b&gt;locator&lt;/b&gt;. If the checkb
 <arg>locator</arg>
 <arg>key</arg>
 </arguments>
-<doc>Send input or keys &lt;b&gt;key&lt;/b&gt; to the element located by the &lt;b&gt;locator&lt;/b&gt;.
+<doc>Send input or keys *key* to the element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1430,7 +1430,7 @@ Selects the checkbox identified by the &lt;b&gt;locator&lt;/b&gt;. If the checkb
 <arg>height</arg>
 </arguments>
 <doc>
-Set the &lt;b&gt;width&lt;/b&gt; and &lt;b&gt;height&lt;/b&gt; to the current widnow.
+Set the *width* and *height* to the current widnow.
 
 *Arguments:*
 
@@ -1450,7 +1450,7 @@ Set the &lt;b&gt;width&lt;/b&gt; and &lt;b&gt;height&lt;/b&gt; to the current wi
 <arg>event</arg>
 </arguments>
 <doc>
-Simulate a javascript/dom &lt;b&gt;event&lt;/b&gt; like 'click', 'mouseOver' etc. on an element located by the &lt;b&gt;locator&lt;/b&gt;
+Simulate a javascript/dom *event* like 'click', 'mouseOver' etc. on an element located by the *locator*
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1468,7 +1468,7 @@ Simulate a javascript/dom &lt;b&gt;event&lt;/b&gt; like 'click', 'mouseOver' etc
 <arg>locator=NONE</arg>
 </arguments>
 <doc>
-Submits the form identified by the &lt;b&gt;locator&lt;/b&gt;.
+Submits the form identified by the *locator*.
 
 If the locator is empty, the first form in the page will be submitted.
 
@@ -1503,6 +1503,94 @@ Switch to another browser session provided with session id/alias.
 <tags>
 </tags>
 </kw>
+<kw name="Text Area Value Should Be">
+<arguments>
+<arg>locator</arg>
+<arg>value</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the value of the text area identified by the *locator* is equal to *value*
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Area Value Should Be | name=comments | user101 |
+| Text Area Value Should Be | name=comments | user101 | value of the comments text area is not user101 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Text Area Value Should Contain">
+<arguments>
+<arg>locator</arg>
+<arg>value</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the value of the text area identified by the *locator* contains *value*.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Area Value Should Contain | name=comments | user101 |
+| Text Area Value Should Contain | name=comments | user101 | comments text area value does not contain user101 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Text Area Value Should Not Be">
+<arguments>
+<arg>locator</arg>
+<arg>value</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the value of the text area identified by the *locator* is equal to *value*
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Area Value Should Not Be | name=comments | user101 |
+| Text Area Value Should Not Be | name=comments | user101 | value of the comments text area is user101 |</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Text Area Value Should Not Contain">
+<arguments>
+<arg>locator</arg>
+<arg>value</arg>
+<arg>message=NONE</arg>
+</arguments>
+<doc>
+Verify the value of the text area identified by the *locator* does not contain *value*.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Area Value Should Not Contain | name=comments | 101 |
+| Text Area Value Should Not Contain | name=comments | 101 | comments text area value does not contain user101 |</doc>
+<tags>
+</tags>
+</kw>
 <kw name="Text Field Value Should Be">
 <arguments>
 <arg>locator</arg>
@@ -1510,7 +1598,7 @@ Switch to another browser session provided with session id/alias.
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; is equal to &lt;b&gt;value&lt;/b&gt;
+Verify the value of the text field identified by the *locator* is equal to *value*
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1532,7 +1620,7 @@ Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; 
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; contains &lt;b&gt;value&lt;/b&gt;.
+Verify the value of the text field identified by the *locator* contains *value*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1554,7 +1642,7 @@ Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; 
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; is equal to &lt;b&gt;value&lt;/b&gt;
+Verify the value of the text field identified by the *locator* is equal to *value*
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1576,7 +1664,7 @@ Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; 
 <arg>message=NONE</arg>
 </arguments>
 <doc>
-Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; does not contain &lt;b&gt;value&lt;/b&gt;.
+Verify the value of the text field identified by the *locator* does not contain *value*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -1596,7 +1684,7 @@ Verify the value of the text field identified by the &lt;b&gt;locator&lt;/b&gt; 
 <arg>title</arg>
 </arguments>
 <doc>
-Verify the current page title should be equal to &lt;b&gt;title&lt;/b&gt;.
+Verify the current page title should be equal to *title*.
 
 *Arguments:*
 - _title_: Expected title
@@ -1613,7 +1701,7 @@ Verify the current page title should be equal to &lt;b&gt;title&lt;/b&gt;.
 <arg>title</arg>
 </arguments>
 <doc>
-Verify the page title to contain the &lt;b&gt;title&lt;/b&gt;.
+Verify the page title to contain the *title*.
 
 *Arguments:*
 - _title_: Expected title
@@ -1630,7 +1718,7 @@ Verify the page title to contain the &lt;b&gt;title&lt;/b&gt;.
 <arg>title</arg>
 </arguments>
 <doc>
-Verify the current page title is not equal to &lt;b&gt;title&lt;/b&gt;.
+Verify the current page title is not equal to *title*.
 
 *Arguments:*
 - _title_: Expected title
@@ -1647,7 +1735,7 @@ Verify the current page title is not equal to &lt;b&gt;title&lt;/b&gt;.
 <arg>title</arg>
 </arguments>
 <doc>
-Verify the page title to not contain the &lt;b&gt;title&lt;/b&gt;.
+Verify the page title to not contain the *title*.
 
 *Arguments:*
 - _title_: Expected title
@@ -1664,7 +1752,7 @@ Verify the page title to not contain the &lt;b&gt;title&lt;/b&gt;.
 <arg>locator</arg>
 </arguments>
 <doc>
-UnSelects the checkbox identified by the &lt;b&gt;locator&lt;/b&gt;. If the checkbox is not checked, selects the checkbox.
+UnSelects the checkbox identified by the *locator*. If the checkbox is not checked, selects the checkbox.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.

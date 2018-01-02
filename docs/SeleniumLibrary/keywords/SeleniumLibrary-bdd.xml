@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keywordspec format="ROBOT" type="resource" generated="20171220 13:51:39" name="SeleniumLibrary (Behavior-Driven Extension Keywords)">
+<keywordspec format="ROBOT" type="resource" generated="20180102 15:42:15" name="SeleniumLibrary (Behavior-Driven Extension Keywords)">
 <version>1.0-SNAPSHOT</version>
 <scope></scope>
 <namedargs>yes</namedargs>

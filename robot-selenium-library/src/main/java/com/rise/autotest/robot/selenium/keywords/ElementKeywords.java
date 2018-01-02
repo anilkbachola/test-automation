@@ -444,11 +444,7 @@ public class ElementKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator" })
     public String getValue(String locator) {
-        return getValue(locator, null);
-    }
-
-    private String getValue(String locator, String tag) {
-        List<WebElement> elements = findElement(locator, tag, true, false);
+        List<WebElement> elements = findElement(locator, true, false);
 
         if (elements.isEmpty()) {
             return null;

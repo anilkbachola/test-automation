@@ -171,7 +171,7 @@ Verify the element text identified by *locator* is *not* equal to given *text*.
 
 ++++elementTextShouldContain
 
-Verify the element text identified by <b>locator</b> contains <b>text</b>.
+Verify the element text identified by *locator* contains *text*.
 This is a _contains_ version of #elementTextShouldBe
 
 *Arguments*
@@ -188,7 +188,7 @@ This is a _contains_ version of #elementTextShouldBe
 
 ++++elementTextShouldNotContain
 
-Verify the element text identified by <b>locator</b> does <u>not</u> contain <b>text</b>.
+Verify the element text identified by *locator* does <u>not</u> contain *text*.
 
 This is a _contains_ version of #elementTextShouldNotBe
 
@@ -206,7 +206,7 @@ This is a _contains_ version of #elementTextShouldNotBe
 
 ++++elementShouldBeEnabled
 
-Verify element located by the <b>locator</b> is enabled.
+Verify element located by the *locator* is enabled.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -219,7 +219,7 @@ Verify element located by the <b>locator</b> is enabled.
 
 ++++elementShouldBeDisabled
 
-Verify element located by the <b>locator</b> is disabled.<br>
+Verify element located by the *locator* is disabled.<br>
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -232,7 +232,7 @@ Verify element located by the <b>locator</b> is disabled.<br>
 
 ++++elementShouldBeSelected
 
-Verify element located by <b>locator</b> is selected.
+Verify element located by *locator* is selected.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -247,7 +247,7 @@ Verify element located by <b>locator</b> is selected.
 
 ++++elementShouldNotBeSelected
 
-Verify element located by <b>locator</b> is <u>not</u> selected.
+Verify element located by *locator* is <u>not</u> selected.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -262,7 +262,7 @@ Verify element located by <b>locator</b> is <u>not</u> selected.
 
 ++++elementShouldBeVisible
 
-Verify element located by <b>locator</b> is visible.
+Verify element located by *locator* is visible.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -277,7 +277,7 @@ Verify element located by <b>locator</b> is visible.
 
 ++++elementShouldNotBeVisible
 
-Verify element located by <b>locator</b> is hidden.
+Verify element located by *locator* is hidden.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -292,7 +292,7 @@ Verify element located by <b>locator</b> is hidden.
 
 ++++elementShouldBeClickable
 
-Verify element located by <b>locator</b> is clickable.
+Verify element located by *locator* is clickable.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -307,7 +307,7 @@ Verify element located by <b>locator</b> is clickable.
 
 ++++elementShouldNotBeClickable
 
-Verify element located by <b>locator</b> is <u>not</u> clickable.
+Verify element located by *locator* is <u>not</u> clickable.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -322,7 +322,7 @@ Verify element located by <b>locator</b> is <u>not</u> clickable.
 
 ++++getElementText
 
-Return the element text located by <b>locator</b>.
+Return the element text located by *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -335,7 +335,7 @@ Return the element text located by <b>locator</b>.
 
 ++++clearElementText
 
-Clears the element text located by <b>locator</b>.
+Clears the element text located by *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -348,7 +348,7 @@ Clears the element text located by <b>locator</b>.
 
 ++++getHorizontalPosition
 
-Returns the horizontal position of the element located by <b>locator</b>.
+Returns the horizontal position of the element located by *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -361,7 +361,7 @@ Returns the horizontal position of the element located by <b>locator</b>.
 
 ++++getVerticalPosition
 
-Returns the vertical position of the element located by <b>locator</b>.
+Returns the vertical position of the element located by *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -374,7 +374,7 @@ Returns the vertical position of the element located by <b>locator</b>.
 
 ++++clickElement
 
-Click an element located by the <b>locator</b>.
+Click an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -387,7 +387,7 @@ Click an element located by the <b>locator</b>.
 
 ++++clickElementAtCoordinates
 
-Click an element located by <b>locator</b> at <b>xOffset</b> and <b>yOffset</b> location.
+Click an element located by *locator* at *xOffset* and *yOffset* location.
 
 Useful for image map links.
 
@@ -404,7 +404,7 @@ Useful for image map links.
 
 ++++doubleClickElement
 
-Double-Click an element located by the <b>locator</b>.
+Double-Click an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -416,7 +416,7 @@ Double-Click an element located by the <b>locator</b>.
 
 ++++focus
 
-Focus an element located by the <b>locator</b>.
+Focus an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -428,7 +428,7 @@ Focus an element located by the <b>locator</b>.
 
 ++++dragAndDrop
 
-Perform Drag-drop from source element located by <b>source</b> to target element located by <b>target</b>.
+Perform Drag-drop from source element located by *source* to target element located by *target*.
 
 *Arguments*
 - _source_: the source element locator string. Refer to locators section for more details.
@@ -442,7 +442,7 @@ Perform Drag-drop from source element located by <b>source</b> to target element
 
 ++++dragAndDropByOffset
 
-Perform Drag-drop from source element located by <b>source</b> to target element located by <b>xOffset</b> and <b>yOffset</b>.
+Perform Drag-drop from source element located by *source* to target element located by *xOffset* and *yOffset*.
 
 *Arguments*
 - _source_: the source element locator string. Refer to locators section for more details.
@@ -456,7 +456,7 @@ Perform Drag-drop from source element located by <b>source</b> to target element
 
 ++++mouseDown
 
-Mouse-down on an element located by the <b>locator</b>.
+Mouse-down on an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -468,7 +468,7 @@ Mouse-down on an element located by the <b>locator</b>.
 
 ++++mouseUp
 
-Mouse-up from an element located by the <b>locator</b>.
+Mouse-up from an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -480,7 +480,7 @@ Mouse-up from an element located by the <b>locator</b>.
 
 ++++mouseOver
 
-Mouse-over on an element located by the <b>locator</b>.
+Mouse-over on an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -492,7 +492,7 @@ Mouse-over on an element located by the <b>locator</b>.
 
 ++++mouseOut
 
-Mouse-out from an element located by the <b>locator</b>.
+Mouse-out from an element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -505,7 +505,7 @@ Mouse-out from an element located by the <b>locator</b>.
 
 ++++openContextMenu
 
-Open Context menu on the element located by the  <b>locator</b>.
+Open Context menu on the element located by the  *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -517,7 +517,7 @@ Open Context menu on the element located by the  <b>locator</b>.
 
 ++++clickLink
 
-Click a link located by the <b>locator</b>.
+Click a link located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -529,7 +529,7 @@ Click a link located by the <b>locator</b>.
 
 ++++mouseDownOnLink
 
-Mouse-down on a link located by the <b>locator</b>.
+Mouse-down on a link located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -541,7 +541,7 @@ Mouse-down on a link located by the <b>locator</b>.
 
 ++++clickImage
 
-Click an image located by the <b>locator</b>.
+Click an image located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -552,7 +552,7 @@ Click an image located by the <b>locator</b>.
 | Click Image | xpath=//h3[1] |
 
 ++++sendKeys
-Send input or keys <b>key</b> to the element located by the <b>locator</b>.
+Send input or keys *key* to the element located by the *locator*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -565,7 +565,7 @@ Send input or keys <b>key</b> to the element located by the <b>locator</b>.
 
 ++++simulateEvent
 
-Simulate a javascript/dom <b>event</b> like 'click', 'mouseOver' etc. on an element located by the <b>locator</b>
+Simulate a javascript/dom *event* like 'click', 'mouseOver' etc. on an element located by the *locator*
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -578,7 +578,7 @@ Simulate a javascript/dom <b>event</b> like 'click', 'mouseOver' etc. on an elem
 
 ++++submitForm
 
-Submits the form identified by the <b>locator</b>.
+Submits the form identified by the *locator*.
 
 If the locator is empty, the first form in the page will be submitted.
 
@@ -593,7 +593,7 @@ If the locator is empty, the first form in the page will be submitted.
 
 ++++selectCheckbox
 
-Selects the checkbox identified by the <b>locator</b>. If the checkbox is already checked, does nothing.
+Selects the checkbox identified by the *locator*. If the checkbox is already checked, does nothing.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -605,7 +605,7 @@ Selects the checkbox identified by the <b>locator</b>. If the checkbox is alread
 
 ++++unSelectCheckbox
 
-UnSelects the checkbox identified by the <b>locator</b>. If the checkbox is not checked, selects the checkbox.
+UnSelects the checkbox identified by the *locator*. If the checkbox is not checked, selects the checkbox.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -618,7 +618,7 @@ UnSelects the checkbox identified by the <b>locator</b>. If the checkbox is not 
 
 ++++chooseFile
 
-Types the given <b>filePath</b> into the input field identified by <b>locator</b>
+Types the given *filePath* into the input field identified by *locator*
 
 This keyword is most often used to input files into upload forms.
 The file specified with filePath must be available on the same host where the Selenium Server is running.
@@ -634,7 +634,7 @@ The file specified with filePath must be available on the same host where the Se
 
 ++++inputPassword
 
-Types the given password into password field identified by the <b>locator</b>.
+Types the given password into password field identified by the *locator*.
 
 Clears the old value in the password field before typing
 
@@ -649,7 +649,7 @@ Clears the old value in the password field before typing
 
 ++++inputText
 
-Types the given text into the text field identified by the <b>locator</b>
+Types the given text into the text field identified by the *locator*
 
 Clears the old value in the text field before typing.
 
@@ -665,7 +665,7 @@ Clears the old value in the text field before typing.
 
 ++++textFieldValueShouldBe
 
-Verify the value of the text field identified by the <b>locator</b> is equal to <b>value</b>
+Verify the value of the text field identified by the *locator* is equal to *value*
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -681,7 +681,7 @@ Verify the value of the text field identified by the <b>locator</b> is equal to 
 
 ++++textFieldValueShouldNotBe
 
-Verify the value of the text field identified by the <b>locator</b> is equal to <b>value</b>
+Verify the value of the text field identified by the *locator* is equal to *value*
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -697,7 +697,7 @@ Verify the value of the text field identified by the <b>locator</b> is equal to 
 
 ++++textFieldValueShouldContain
 
-Verify the value of the text field identified by the <b>locator</b> contains <b>value</b>.
+Verify the value of the text field identified by the *locator* contains *value*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -712,7 +712,7 @@ Verify the value of the text field identified by the <b>locator</b> contains <b>
 
 ++++textFieldValueShouldNotContain
 
-Verify the value of the text field identified by the <b>locator</b> does not contain <b>value</b>.
+Verify the value of the text field identified by the *locator* does not contain *value*.
 
 *Arguments*
 - _locator_: the locator string. Refer to locators section for more details.
@@ -726,8 +726,71 @@ Verify the value of the text field identified by the <b>locator</b> does not con
 | Text Field Value Should Not Contain | name=username | 101 | username field value does not contain user101 |
 
 
+++++textAreaValueShouldBe
+
+Verify the value of the text area identified by the *locator* is equal to *value*
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Area Value Should Be | name=comments | user101 |
+| Text Area Value Should Be | name=comments | user101 | value of the comments text area is not user101 |
+
+
+++++textAreaValueShouldNotBe
+
+Verify the value of the text area identified by the *locator* is equal to *value*
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Area Value Should Not Be | name=comments | user101 |
+| Text Area Value Should Not Be | name=comments | user101 | value of the comments text area is user101 |
+
+
+++++textAreaValueShouldContain
+
+Verify the value of the text area identified by the *locator* contains *value*.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Area Value Should Contain | name=comments | user101 |
+| Text Area Value Should Contain | name=comments | user101 | comments text area value does not contain user101 |
+
+++++textAreaValueShouldNotContain
+
+Verify the value of the text area identified by the *locator* does not contain *value*.
+
+*Arguments*
+- _locator_: the locator string. Refer to locators section for more details.
+- _value_: Expected value.
+- _message_: Optional, the message to throw on failure.
+
+*Usage Example(s):*
+
+| Open Browser | www.google.com |
+| Text Area Value Should Not Contain | name=comments | 101 |
+| Text Area Value Should Not Contain | name=comments | 101 | comments text area value does not contain user101 |
+
+
 ++++goTo
-Navigate the browser to the specified <b>url</b>.
+Navigate the browser to the specified *url*.
 
 *Arguments*
 
@@ -803,7 +866,7 @@ Reload current page.
 
 ++++titleShouldContain
 
-Verify the page title to contain the <b>title</b>.
+Verify the page title to contain the *title*.
 
 *Arguments:*
 - _title_: Expected title
@@ -816,7 +879,7 @@ Verify the page title to contain the <b>title</b>.
 
 ++++titleShouldNotContain
 
-Verify the page title to not contain the <b>title</b>.
+Verify the page title to not contain the *title*.
 
 *Arguments:*
 - _title_: Expected title
@@ -829,7 +892,7 @@ Verify the page title to not contain the <b>title</b>.
 
 ++++titleShouldBe
 
-Verify the current page title should be equal to <b>title</b>.
+Verify the current page title should be equal to *title*.
 
 *Arguments:*
 - _title_: Expected title
@@ -841,7 +904,7 @@ Verify the current page title should be equal to <b>title</b>.
 
 ++++titleShouldNotBe
 
-Verify the current page title is not equal to <b>title</b>.
+Verify the current page title is not equal to *title*.
 
 *Arguments:*
 - _title_: Expected title
@@ -854,7 +917,7 @@ Verify the current page title is not equal to <b>title</b>.
 
 ++++pageShouldContainText
 
-Verify the current page contains the given <b>text</b>.
+Verify the current page contains the given *text*.
 
 *Arguments:*
 - _text_: expected text
@@ -866,7 +929,7 @@ Verify the current page contains the given <b>text</b>.
 
 ++++pageShouldNotContainText
 
-Verify the current page does not contain the given <b>text</b>.
+Verify the current page does not contain the given *text*.
 
 *Arguments:*
 - _text_: expected text
@@ -879,7 +942,7 @@ Verify the current page does not contain the given <b>text</b>.
 
 ++++pageShouldContainElement
 
-Verify the current page contains the given element with optional <b>tag</b> and located by the <b>locator</b>.
+Verify the current page contains the given element with optional *tag* and located by the *locator*.
 
 Also supports checking the element to be located is of specific tag. Which is useful in locating custom element tags.
 
@@ -897,7 +960,7 @@ Also supports checking the element to be located is of specific tag. Which is us
 
 ++++pageShouldNotContainElement
 
-Verify the current page does not contain the given element with optional <b>tag</b> and located by the <b>locator</b>.
+Verify the current page does not contain the given element with optional *tag* and located by the *locator*.
 
 Also supports checking the element to be located is of specific tag. Which is useful in locating custom element tags.
 
@@ -915,7 +978,7 @@ Also supports checking the element to be located is of specific tag. Which is us
 
 ++++pageShouldContainLink
 
-Verify the current page contains the given link element located by the <b>locator</b>.
+Verify the current page contains the given link element located by the *locator*.
 
 The locator must be able to locate a link element.
 
@@ -931,7 +994,7 @@ The locator must be able to locate a link element.
 
 ++++pageShouldNotContainLink
 
-Verify the current page not contains the given link element located by the <b>locator</b>.
+Verify the current page not contains the given link element located by the *locator*.
 
 *Arguments:*
 - _locator_: the locator string.
@@ -946,7 +1009,7 @@ Verify the current page not contains the given link element located by the <b>lo
 
 ++++pageShouldContainImage
 
-Verify the current page contains the image element located by the <b>locator</b>.
+Verify the current page contains the image element located by the *locator*.
 
 The locator must be able to locate an image element.
 
@@ -963,7 +1026,7 @@ The locator must be able to locate an image element.
 
 ++++pageShouldNotContainImage
 
-Verify the current page does not contain the image element located by the <b>locator</b>.
+Verify the current page does not contain the image element located by the *locator*.
 
 
 *Arguments:*
@@ -980,7 +1043,7 @@ Verify the current page does not contain the image element located by the <b>loc
 
 ++++pageShouldContainCheckbox
 
-Verify the current page contains the checkbox element located by the <b>locator</b>.
+Verify the current page contains the checkbox element located by the *locator*.
 
 The locator must be able to locate an checkbox element.
 
@@ -997,7 +1060,7 @@ The locator must be able to locate an checkbox element.
 
 ++++pageShouldNotContainCheckbox
 
-Verify the current page does not contain the checkbox element located by the <b>locator</b>.
+Verify the current page does not contain the checkbox element located by the *locator*.
 
 
 *Arguments:*
@@ -1014,7 +1077,7 @@ Verify the current page does not contain the checkbox element located by the <b>
 
 ++++pageShouldContainRadioButton
 
-Verify the current page contains the radio button element located by the <b>locator</b>.
+Verify the current page contains the radio button element located by the *locator*.
 
 The locator must be able to locate an radio button element.
 
@@ -1031,7 +1094,7 @@ The locator must be able to locate an radio button element.
 
 ++++pageShouldNotContainRadioButton
 
-Verify the current page does not contain the radio button element located by the <b>locator</b>.
+Verify the current page does not contain the radio button element located by the *locator*.
 
 
 *Arguments:*
@@ -1047,7 +1110,7 @@ Verify the current page does not contain the radio button element located by the
 
 ++++pageShouldContainTextfield
 
-Verify the current page contains the text element located by the <b>locator</b>.
+Verify the current page contains the text element located by the *locator*.
 
 The locator must be able to locate an input text element.
 
@@ -1064,7 +1127,7 @@ The locator must be able to locate an input text element.
 
 ++++pageShouldNotContainTextfield
 
-Verify the current page not contains the text element located by the <b>locator</b>.
+Verify the current page not contains the text element located by the *locator*.
 
 
 *Arguments:*
@@ -1120,7 +1183,7 @@ Get current window size.
 
 ++++setWindowSize
 
-Set the <b>width</b> and <b>height</b> to the current widnow.
+Set the *width* and *height* to the current widnow.
 
 *Arguments:*
 
@@ -1145,7 +1208,7 @@ Return current window location.
 
 ++++locationShouldBe
 
-Verify the current window location is equals to <b>url</b>.
+Verify the current window location is equals to *url*.
 
 - _url_: the expected url.
 
@@ -1157,7 +1220,7 @@ Verify the current window location is equals to <b>url</b>.
 
 ++++locationShouldContain
 
-Verify the current window location contains <b>url</b>.
+Verify the current window location contains *url*.
 
 - _url_: the expected url.
 
@@ -1171,7 +1234,7 @@ Verify the current window location contains <b>url</b>.
 
 Verify an alert is present and dismiss it.
 
-If <b>text</b> is a non-empty string, then it is also verified that the message of the alert equals to text.
+If *text* is a non-empty string, then it is also verified that the message of the alert equals to text.
 
 *Arguments:*
 - _text_: Text on the alter window.

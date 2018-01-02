@@ -75,7 +75,7 @@ public class WebDriverBuilder {
     }
 
     //TODO: understand the need for this. So far only Firefox supports, chrome does not support.
-    /*Not all drivers support the Web Driver spec, "timeouts" settings. This is an effort to
+    /*Not all drivers support the Web Driver spec's "timeouts" settings. This is an effort to
         read the timeout properties and set them manually with driver.
      */
     private static void setTimeouts(WebDriver webDriver, DesiredCapabilities capabilities) {

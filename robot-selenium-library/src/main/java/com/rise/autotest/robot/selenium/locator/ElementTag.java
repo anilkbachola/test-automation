@@ -23,8 +23,8 @@ public class ElementTag {
 
     public static ElementTag fromName(String tagName) {
         try {
-            Tag tag =  Tag.valueOf(tagName.toUpperCase());
-            return new ElementTag(tag.tagName, "type", tag.type);
+            StdTags tag =  StdTags.valueOf(tagName.toUpperCase());
+            return new ElementTag(tag.getTagName(), "type", tag.getType());
         } catch (IllegalArgumentException ex) {
             //ignore
         }
@@ -45,28 +45,5 @@ public class ElementTag {
         this.attributes.remove(attrName);
     }
 
-    public enum Tag {
-        LINK("a", null),
-        IMAGE("img", null),
-        CHECKBOX("input", "checkbox"),
-        RADIO("input", "radio"),
-        TEXT("input", "text"),
-        PASSWORD("input","password"),
-        FILEUPLOAD("input", "file"),
-        SUBMIT("input", "submit"),
-        RESET("input", "reset"),
-        BUTTON("button", null),
-        INPUTBUTTON("input", "button"),
-        TEXTAREA("textarea", null),
-        LIST("select", null),
-        FORM("form", null);
-
-        Tag(String tagName, String type) {
-            this.tagName = tagName;
-            this.type = type;
-        }
-        private final String tagName;
-        private final String type;
-    }
 
 }

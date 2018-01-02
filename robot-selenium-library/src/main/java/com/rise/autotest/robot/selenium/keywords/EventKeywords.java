@@ -1,6 +1,8 @@
 package com.rise.autotest.robot.selenium.keywords;
 
 import com.rise.autotest.robot.FailureException;
+import com.rise.autotest.robot.selenium.locator.ElementTag;
+import com.rise.autotest.robot.selenium.locator.StdTags;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -201,7 +203,7 @@ public class EventKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator" })
     public void clickLink(String locator) {
-        List<WebElement> elements = findElement(locator, "link", true, true );
+        List<WebElement> elements = findElement(locator, StdTags.LINK.name(), true, true );
 
         elements.get(0).click();
     }
@@ -215,7 +217,7 @@ public class EventKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator" })
     public void mouseDownOnLink(String locator) {
-        List<WebElement> elements = findElement(locator, "link", true, true);
+        List<WebElement> elements = findElement(locator, StdTags.LINK.name(), true, true);
 
         Actions actions = new Actions(driverManager.getCurrent());
         actions.clickAndHold(elements.get(0)).perform();
@@ -231,10 +233,10 @@ public class EventKeywords extends SeleniumBase {
     @ArgumentNames({ "locator" })
     public void clickImage(String locator) {
 
-        List<WebElement> elements = findElement(locator, "image", true, true);
+        List<WebElement> elements = findElement(locator, StdTags.IMAGE.name(), true, true);
 
         if (elements.isEmpty()) {
-            elements = findElement(locator, "button", true, true);
+            elements = findElement(locator, StdTags.BUTTON.name(), true, true);
         }
         WebElement element = elements.get(0);
         element.click();

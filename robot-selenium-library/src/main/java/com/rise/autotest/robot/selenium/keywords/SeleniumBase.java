@@ -19,7 +19,8 @@ abstract class SeleniumBase {
     }
 
     List<WebElement> findElement(String locatorString, String tagName, boolean firstOnly, boolean required ) {
-        List<WebElement> webElements = find(locatorString, tagName, required);
+
+        List<WebElement> webElements = find(locatorString, ElementTag.fromName(tagName), required);
 
         if(firstOnly && webElements.size() > 1) {
             return Arrays.asList(webElements.get(0));
@@ -31,13 +32,13 @@ abstract class SeleniumBase {
         ((JavascriptExecutor) driverManager.getCurrent()).executeScript(script, objects);
     }
 
-    private List<WebElement> find(String locatorString, String tagName, boolean required) {
+    private List<WebElement> find(String locatorString, ElementTag tagName, boolean required) {
         Locator locator = LocatorFactory.instance().parseLocator(locatorString);
         LocatorContext context = buildContext(locatorString, tagName, required);
         return locator.find(driverManager.getCurrent(), context);
     }
 
-    private LocatorContext buildContext(String locatorString, String tagName, boolean required) {
+    private LocatorContext buildContext(String locatorString, ElementTag tagName, boolean required) {
         LocatorContext context = new LocatorContext();
         context.setRequired(required);
 
@@ -49,8 +50,7 @@ abstract class SeleniumBase {
         context.setCriteria(criteria);
 
         if(tagName != null) {
-            ElementTag tag = ElementTag.fromName(tagName);
-            context.setTag(tag);
+            context.setTag(tagName);
         }
 
         return context;

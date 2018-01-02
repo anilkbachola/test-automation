@@ -2,6 +2,7 @@ package com.rise.autotest.robot.selenium.keywords;
 
 import com.rise.autotest.robot.FailureException;
 import com.rise.autotest.robot.selenium.locator.ElementTag;
+import com.rise.autotest.robot.selenium.locator.StdTags;
 import com.rise.autotest.robot.selenium.util.Util;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -141,11 +142,10 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({"locator", "tag=NONE", "message=NONE"})
     public void pageShouldContainElement(String locator, String tag, String message) {
-        String name = tag != null ? tag : "element";
         if(!isElementPresent(locator,null)) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
-                        String.format("Page should have contained %s '%s' but did not", name, locator));
+                        String.format("Page should have contained %s '%s' but did not", tag != null ? tag : "element", locator));
             }
             throw new FailureException(message);
         }
@@ -168,11 +168,10 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({"locator", "tag=NONE", "message=NONE"})
     public void pageShouldNotContainElement(String locator, String tag, String message) {
-        String name = tag != null ? tag : "element";
         if(isElementPresent(locator,null)) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
-                        String.format("Page should not have contained %s '%s' but did.", name, locator)
+                        String.format("Page should not have contained %s '%s' but did.", tag != null ? tag : "element", locator)
                 );
             }
             throw new FailureException(message);
@@ -195,7 +194,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldContainLink(String locator, String message) {
-        if(!isElementPresent(locator, "link")) {
+        if(!isElementPresent(locator, StdTags.LINK.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should have contained link '%s' but did not", locator));
@@ -220,7 +219,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldNotContainLink(String locator, String message) {
-        if(isElementPresent(locator, "link")) {
+        if(isElementPresent(locator, StdTags.LINK.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should not have contained link '%s' but did.", locator)
@@ -245,7 +244,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldContainImage(String locator, String message) {
-        if(!isElementPresent(locator, ElementTag.Tag.IMAGE.name())) {
+        if(!isElementPresent(locator, StdTags.IMAGE.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should have contained image '%s' but did not.", locator)
@@ -271,7 +270,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldNotContainImage(String locator, String message) {
-        if(isElementPresent(locator, ElementTag.Tag.IMAGE.name())) {
+        if(isElementPresent(locator, StdTags.IMAGE.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should not have contained image '%s' but did.", locator)
@@ -297,7 +296,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldContainCheckbox(String locator, String message) {
-        if(!isElementPresent(locator, ElementTag.Tag.CHECKBOX.name())) {
+        if(!isElementPresent(locator, StdTags.CHECKBOX.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should have contained checkbox '%s' but did not.", locator)
@@ -321,7 +320,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldNotContainCheckbox(String locator, String message) {
-        if(isElementPresent(locator, "checkbox")) {
+        if(isElementPresent(locator, StdTags.CHECKBOX.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should not have contained checkbox '%s' but did.", locator)
@@ -347,7 +346,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldContainRadioButton(String locator, String message) {
-        if(!isElementPresent(locator, "radio")) {
+        if(!isElementPresent(locator, StdTags.RADIO.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should have contained radio button '%s' but did not.", locator)
@@ -371,7 +370,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldNotContainRadioButton(String locator, String message) {
-        if(isElementPresent(locator, "radio")) {
+        if(isElementPresent(locator, StdTags.RADIO.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should not have contained radio button '%s' but did.", locator)
@@ -395,7 +394,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldContainTextfield(String locator, String message) {
-        if(!isElementPresent(locator, ElementTag.Tag.TEXT.name())) {
+        if(!isElementPresent(locator, StdTags.TEXT.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should have contained text field '%s' but did not.", locator)
@@ -419,7 +418,7 @@ public class PageKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({ "locator", "message=NONE" })
     public void pageShouldNotContainTextfield(String locator, String message) {
-        if(isElementPresent(locator, ElementTag.Tag.TEXT.name())) {
+        if(isElementPresent(locator, StdTags.TEXT.name())) {
             if (message == null || message.equals("")) {
                 throw new FailureException(
                         String.format("Page should not have contained text field '%s' but did.", locator)
@@ -438,17 +437,17 @@ public class PageKeywords extends SeleniumBase {
         }
 
         //if not check the frame(s) content
-        //TODO: check iframes implementation
-        /*List<WebElement> frameElements = findElement("xpath=//frame|//iframe", false, false);
-        for (WebElement frameElement : frameElements) {
-            webDriver.switchTo().frame(frameElement);
-            boolean found = isTextPresent(text);
-            webDriver.switchTo().defaultContent();
-            if (found) {
-                return true;
+        List<WebElement> frameElements = findElement("tag=iframe", false, false);
+        if(frameElements != null && !frameElements.isEmpty()) {
+            for (int i = 0; i < frameElements.size(); i++) {
+                webDriver.switchTo().frame(i);
+                boolean found = isTextPresent(text);
+                webDriver.switchTo().defaultContent();
+                if (found) {
+                    return true;
+                }
             }
-        }*/
-
+        }
         return false;
     }
 

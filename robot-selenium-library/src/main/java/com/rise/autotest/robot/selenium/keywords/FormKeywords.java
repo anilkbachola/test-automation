@@ -2,6 +2,7 @@ package com.rise.autotest.robot.selenium.keywords;
 
 import com.rise.autotest.robot.FailureException;
 import com.rise.autotest.robot.selenium.locator.ElementTag;
+import com.rise.autotest.robot.selenium.locator.StdTags;
 import org.openqa.selenium.WebElement;
 import org.robotframework.javalib.annotation.ArgumentNames;
 import org.robotframework.javalib.annotation.RobotKeyword;
@@ -25,7 +26,7 @@ public class FormKeywords extends SeleniumBase {
         if (locator == null) {
             locator = "xpath=//form";
         }
-        List<WebElement> webElements = findElement(locator, "form", true, true);
+        List<WebElement> webElements = findElement(locator, StdTags.FORM.name(), true, true);
         webElements.get(0).submit();
     }
 
@@ -79,7 +80,7 @@ public class FormKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({"locator", "filePath"})
     public void chooseFile(String locator, String filePath) {
-        WebElement element = findElement(locator, ElementTag.Tag.FILEUPLOAD.name(),true, true).get(0);
+        WebElement element = findElement(locator, StdTags.FILEUPLOAD.name(),true, true).get(0);
         if(element != null) {
             element.sendKeys(filePath);
         }
@@ -96,7 +97,7 @@ public class FormKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({"locator", "password"})
     public void inputPassword(String locator, String password) {
-        WebElement element = findElement(locator, ElementTag.Tag.PASSWORD.name(),true, true).get(0);
+        WebElement element = findElement(locator, StdTags.FILEUPLOAD.name(),true, true).get(0);
         if(element != null) {
             element.clear();
             element.sendKeys(password);
@@ -114,7 +115,7 @@ public class FormKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({"locator", "text"})
     public void inputText(String locator, String text) {
-        WebElement element = findElement(locator, ElementTag.Tag.TEXT.name(),true, true).get(0);
+        WebElement element = findElement(locator, StdTags.TEXT.name(),true, true).get(0);
         if(element != null) {
             element.clear();
             element.sendKeys(text);
@@ -138,8 +139,7 @@ public class FormKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({"locator", "value", "message=NONE"})
     public void textFieldValueShouldBe(String locator, String value, String message) {
-        WebElement element = findElement(locator, ElementTag.Tag.TEXT.name(),true, true).get(0);
-        String actual = element.getText();
+        String actual = getTextFieldValue(locator);
         if (!actual.equals(value)) {
             if (message == null) {
                 throw new FailureException(
@@ -166,8 +166,7 @@ public class FormKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({"locator", "value", "message=NONE"})
     public void textFieldValueShouldContain(String locator, String value, String message) {
-        WebElement element = findElement(locator, ElementTag.Tag.TEXT.name(),true, true).get(0);
-        String actual = element.getText();
+        String actual = getTextFieldValue(locator);
         if (!actual.contains(value)) {
             if (message == null) {
                 throw new FailureException(
@@ -195,8 +194,7 @@ public class FormKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({"locator", "value", "message=NONE"})
     public void textFieldValueShouldNotBe(String locator, String value, String message) {
-        WebElement element = findElement(locator, ElementTag.Tag.TEXT.name(),true, true).get(0);
-        String actual = element.getText();
+        String actual = getTextFieldValue(locator);
         if (actual.equals(value)) {
             if (message == null) {
                 throw new FailureException(
@@ -224,8 +222,7 @@ public class FormKeywords extends SeleniumBase {
     @RobotKeyword
     @ArgumentNames({"locator", "value", "message=NONE"})
     public void textFieldValueShouldNotContain(String locator, String value, String message) {
-        WebElement element = findElement(locator, ElementTag.Tag.TEXT.name(),true, true).get(0);
-        String actual = element.getText();
+        String actual = getTextFieldValue(locator);
         if (actual.contains(value)) {
             if (message == null) {
                 message = String.format("Value of text field '%s' should not have contain '%s' but did '%s'", locator, value,
@@ -235,7 +232,125 @@ public class FormKeywords extends SeleniumBase {
         }
     }
 
-    //TODO: add shouldbe, shouldnotbe, shouldcontain, shouldnotcontain for textarea
+
+
+    @RobotKeywordOverload
+    public void textAreaValueShouldBe(String locator, String value) {
+        textAreaValueShouldBe(locator, value, "");
+    }
+
+    /**
+     * Verify the value of the text area identified by the <b>locator</b> is equal to <b>value</b>.<br>
+     *
+     * @param locator   the locator to locate the text field
+     * @param value     the value to compare
+     * @param message   Optional custom error message (Default=NONE)
+     */
+    @RobotKeyword
+    @ArgumentNames({"locator", "value", "message=NONE"})
+    public void textAreaValueShouldBe(String locator, String value, String message) {
+        String actual = getTextAreaValue(locator);
+        if(!actual.equals(value)) {
+            if (message == null) {
+                throw new FailureException(
+                        String.format("Value of text area '%s' should have been '%s' but was '%s'", locator, value, actual)
+                );
+            }
+            throw new FailureException(message);
+        }
+    }
+
+    @RobotKeywordOverload
+    public void textAreaValueShouldNotBe(String locator, String value) {
+        textAreaValueShouldNotBe(locator, value, "");
+    }
+
+
+    /**
+     * Verify the value of the text area identified by the <b>locator</b> is equal to <b>value</b>.<br>
+     *
+     * @param locator   the locator to locate the text field
+     * @param value     the value to compare
+     * @param message   Optional custom error message (Default=NONE)
+     */
+    @RobotKeyword
+    @ArgumentNames({"locator", "value", "message=NONE"})
+    public void textAreaValueShouldNotBe(String locator, String value, String message) {
+        String actual = getTextAreaValue(locator);
+        if(actual.equals(value)) {
+            if (message == null) {
+                throw new FailureException(
+                        String.format("Value of text area '%s' should not have been '%s' but did '%s'", locator, value, actual)
+                );
+            }
+            throw new FailureException(message);
+        }
+    }
+
+    @RobotKeywordOverload
+    public void textAreaValueShouldContain(String locator, String value) {
+        textAreaValueShouldContain(locator, value, "");
+    }
+
+    /**
+     * Verify the value of the text area identified by the <b>locator</b> contains <b>value</b>.<br>
+     *
+     * @param locator   the locator to locate the text field
+     * @param value     the value to compare
+     * @param message   Optional custom error message (Default=NONE)
+     */
+    @RobotKeyword
+    @ArgumentNames({"locator", "value", "message=NONE"})
+    public void textAreaValueShouldContain(String locator, String value, String message) {
+        String actual = getTextAreaValue(locator);
+        if (!actual.contains(value)) {
+            if (message == null) {
+                throw new FailureException(
+                        String.format("Value of text area '%s' should have contain '%s' but was '%s'", locator, value,
+                                actual)
+                );
+            }
+            throw new FailureException(message);
+        }
+    }
+
+
+
+    @RobotKeywordOverload
+    @ArgumentNames({"locator", "value"})
+    public void textAreaValueShouldNotContain(String locator, String value) {
+        textAreaValueShouldNotContain(locator, value, "");
+    }
+
+    /**
+     * Verify the value of the text area identified by the <b>locator</b> does not contain <b>value</b>.<br>
+     *
+     * @param locator   the locator to locate the text field
+     * @param value     the value to compare
+     * @param message   Optional custom error message (Default=NONE)
+     */
+    @RobotKeyword
+    @ArgumentNames({"locator", "value", "message=NONE"})
+    public void textAreaValueShouldNotContain(String locator, String value, String message) {
+        String actual = getTextAreaValue(locator);
+        if (actual.contains(value)) {
+            if (message == null) {
+                message = String.format("Value of text area '%s' should not have contain '%s' but did '%s'", locator, value,
+                        actual);
+            }
+            throw new FailureException(message);
+        }
+    }
+
+    private String getTextAreaValue(String locator) {
+        WebElement element = findElement(locator, StdTags.TEXTAREA.name(), true,true).get(0);
+        return  element == null? "" : element.getText();
+    }
+
+    private String getTextFieldValue(String locator) {
+        WebElement element = findElement(locator, StdTags.TEXT.name(), true,true).get(0);
+        return  element == null? "" : element.getText();
+    }
 
     //TODO: add radio button functionality
 
@@ -246,14 +361,14 @@ public class FormKeywords extends SeleniumBase {
      * @param locator the locator to locate the button element
      */
     public void clickButton(String locator) {
-        WebElement element = findElement(locator, ElementTag.Tag.INPUTBUTTON.name(),true, true).get(0);
+        WebElement element = findElement(locator, StdTags.INPUTBUTTON.name(),true, true).get(0);
         element.click();
     }
 
 
 
     private WebElement getCheckbox(String locator) {
-        return findElement(locator, "checkbox", true, true).get(0);
+        return findElement(locator, StdTags.CHECKBOX.name(), true, true).get(0);
     }
 
 
