@@ -20,6 +20,7 @@ abstract class SeleniumBase {
 
     List<WebElement> findElement(String locatorString, String tagName, boolean firstOnly, boolean required ) {
 
+
         List<WebElement> webElements = find(locatorString, ElementTag.fromName(tagName), required);
 
         if(firstOnly && webElements.size() > 1) {

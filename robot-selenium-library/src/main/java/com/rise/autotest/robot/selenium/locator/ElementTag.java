@@ -22,6 +22,9 @@ public class ElementTag {
     }
 
     public static ElementTag fromName(String tagName) {
+        if(tagName == null || tagName.isEmpty()) {
+            return  null;
+        }
         try {
             StdTags tag =  StdTags.valueOf(tagName.toUpperCase());
             return new ElementTag(tag.getTagName(), "type", tag.getType());

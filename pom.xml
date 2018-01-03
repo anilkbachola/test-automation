@@ -13,6 +13,7 @@
         <module>robot-util</module>
         <module>robot-db-library</module>
         <module>robot-selenium-library</module>
+        <module>testsuites</module>
     </modules>
 
     <properties>
