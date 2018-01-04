@@ -44,6 +44,19 @@ public class BrowserKeywords extends SeleniumBase {
 
 
     /**
+     * Opens the browser specified by <b>browserName</b> and navigates to the given <b>url</b>.<br>
+     * And registers the browser with {@link WebDriverManager}
+     *
+     * @param url   URL to navigate
+     * @param browserName   name of the browser. See {@link BrowserType}
+     * @return  session id of the browser/driver instance.
+     */
+    @RobotKeywordOverload
+    public String openBrowser(String url, String browserName, String alias) {
+        return openBrowser(url, browserName, alias, null);
+    }
+
+    /**
      * Opens the browser specified by <b>browserName</b> and assigns <b>alias</b> if provided.<br>
      * Navigates to the given <b>url</b>.
      * And registers the browser with {@link WebDriverManager}

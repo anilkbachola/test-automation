@@ -36,7 +36,7 @@
                         <configuration>
                             <logLevel>debug</logLevel>
                             <testCasesDirectory>${project.basedir}/src/test/resources/testsuites/*.robot</testCasesDirectory>
-                            <includes>Acceptance</includes>
+                            <includes>Demo</includes>
                         </configuration>
                     </execution>
                 </executions>
